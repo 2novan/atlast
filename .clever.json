@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_69461201-a5d3-46e1-ad3a-537cebcb7a55",
+      "org_id": "user_44d334de-2f78-4f92-811e-fe9b8ae560c6",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_69461201-a5d3-46e1-ad3a-537cebcb7a55.git",
+      "name": "atlast",
+      "alias": "atlast"
+    }
+  ]
+}
