@@ -269,13 +269,21 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # ==> OmniAuth
-  # Add a new OmniAuth provider. Check the wiki for more information on setting
-  # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+config.omniauth :spotify, ENV["SPOTIFY_ID"], ENV["SPOTIFY_SECRET"],
+scope: %w[
+  playlist-read-private
+  user-read-email
+  user-top-read
+  user-read-recently-played
+  user-follow-read
+  user-follow-modify
+  playlist-read-private
+  playlist-modify-private
+].join(' ')
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
-  # change the failure app, you can configure them inside the config.warden block.
+  # change the ailure app, you can configure them inside the config.warden block.
   #
   # config.warden do |manager|
   #   manager.intercept_401 = false
