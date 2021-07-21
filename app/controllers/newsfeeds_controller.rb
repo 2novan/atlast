@@ -1,4 +1,6 @@
 class NewsfeedsController < ApplicationController
-  def show
+  def index
+    @releases = Release.all
+
   end
 end
