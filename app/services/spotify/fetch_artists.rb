@@ -12,6 +12,9 @@ module Spotify
       # rails c -> reload!
       @spotify_user.top_artists.each do |artist|
         artist = Artist.where({name: artist.name, spotify_id: artist.id, image_url: artist.images.last["url"], genre }).first_or_create
+        genre = Genre.where({name: artist.genres}).first_or_create
+        artist_genres = Artist_genres.where({genre: genre, artist: artist}).first_or_create
+
         # Recuperer les genres et les envoyer dans la table genre puis les associer avec genre_id
       
           # genres each 
