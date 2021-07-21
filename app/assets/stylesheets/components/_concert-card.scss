@@ -1,19 +1,18 @@
-.album-card {
+.concert-card {
   height: 6rem;
   display: flex;
   width: 100%;
   align-items: flex-start;
-  // justify-content: space-between;
   flex-direction: row;
   color: $light-gray;
   background-color: $gray;
-  border-bottom: 0.2rem solid $blue;
-  border-left: 1rem solid $blue;
+  border-bottom: 0.2rem solid $red;
+  border-left: 1rem solid $red;
   .album-cover {
     height: 100%;
   }
 
-  .album-info {
+  .concert-info {
     height: 100%;
     display: flex;
     align-items: flex-start;
@@ -24,7 +23,7 @@
     padding-bottom: 0.5rem;
   }
 
-  .album-text {
+  .concert-text {
     height: 100%;
     display: flex;
     align-items: flex-start;
@@ -33,27 +32,36 @@
     flex-direction: column;
   }
 
-  .album-name h2 {
-    color: $blue;
+  .concert-name h2 {
+    padding-top: 0.3rem;
+    color: $red;
     font-weight: bold;
     font-size: 1.3rem;
   }
 
-  .album-name p {
+  .concert-name p {
     color: $light-gray;
     font-size: 1rem;
   }
 
-  .tracklist-info {
+  .concert-city {
     font-size: 0.6rem;
     color: $text-gray;
   }
 
-  .release-date {
+  .concert-date {
+    padding-top: 0.5rem;
     align-items: end;
+    justify-content: space-between;
+    flex-direction: column;
+
     display: flex;
     height: 100%;
     font-size: 0.6rem;
     color: $text-gray;
+  }
+
+  i {
+    color: $red;
   }
 }
