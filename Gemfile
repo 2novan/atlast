@@ -21,6 +21,7 @@ gem 'simple_form'
 
 gem 'omniauth-spotify'
 gem "omniauth-rails_csrf_protection"
+gem 'rspotify', '~> 2.10.2'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -42,7 +43,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  # gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
