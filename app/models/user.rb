@@ -18,10 +18,12 @@ class User < ApplicationRecord
     user ||= User.find_by(email: auth.info.email) # User did a regular sign up in the past.
     if user
       user.update(user_params)
+      Spotify::FetchArtists.new(user).call
     else
       user = User.new(user_params)
       user.password = Devise.friendly_token[0, 20]  # Fake password for validation
       user.save
+      Spotify::FetchArtists.new(user).call
     end
 
     return user
