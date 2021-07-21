@@ -1,0 +1,59 @@
+.album-card {
+  height: 6rem;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  // justify-content: space-between;
+  flex-direction: row;
+  color: $light-gray;
+  background-color: $gray;
+  border-bottom: 0.2rem solid $blue;
+  border-left: 1rem solid $blue;
+  .album-cover {
+    height: 100%;
+  }
+
+  .album-info {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .album-text {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  .album-name h2 {
+    color: $blue;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .album-name p {
+    color: $light-gray;
+    font-size: 1rem;
+  }
+
+  .tracklist-info {
+    font-size: 0.6rem;
+    color: $text-gray;
+  }
+
+  .release-date {
+    align-items: end;
+    display: flex;
+    height: 100%;
+    font-size: 0.6rem;
+    color: $text-gray;
+  }
+}

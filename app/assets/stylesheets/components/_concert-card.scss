@@ -1,0 +1,67 @@
+.concert-card {
+  height: 6rem;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: row;
+  color: $light-gray;
+  background-color: $gray;
+  border-bottom: 0.2rem solid $red;
+  border-left: 1rem solid $red;
+  .album-cover {
+    height: 100%;
+  }
+
+  .concert-info {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .concert-text {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  .concert-name h2 {
+    padding-top: 0.3rem;
+    color: $red;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .concert-name p {
+    color: $light-gray;
+    font-size: 1rem;
+  }
+
+  .concert-city {
+    font-size: 0.6rem;
+    color: $text-gray;
+  }
+
+  .concert-date {
+    padding-top: 0.5rem;
+    align-items: end;
+    justify-content: space-between;
+    flex-direction: column;
+
+    display: flex;
+    height: 100%;
+    font-size: 0.6rem;
+    color: $text-gray;
+  }
+
+  i {
+    color: $red;
+  }
+}
