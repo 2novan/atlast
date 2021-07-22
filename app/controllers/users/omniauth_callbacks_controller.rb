@@ -1,4 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  skip_before_action :authenticate_user!
+
   def spotify
     user = User.find_for_spotify_oauth(request.env['omniauth.auth'])
 
