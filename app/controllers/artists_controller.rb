@@ -3,5 +3,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @artist = Artist.find(params[:id])
+    @genre = @artist.genres.collect { |g| (g[:name]).to_s }
   end
 end
