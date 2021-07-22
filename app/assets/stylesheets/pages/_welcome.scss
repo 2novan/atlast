@@ -11,9 +11,11 @@
   height: 45px;
   width: 45px;
   position: absolute;
-  bottom: 0;
+  bottom: 0 !important;
+  top: 97% !important;
   right: 0;
   padding: 5px;
+  top: none;
 }
 
 #message {
