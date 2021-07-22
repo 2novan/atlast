@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       super
     else
-      repost user_spotify_omniauth_authorize_path
+      repost user_spotify_omniauth_authorize_path, options: { authenticity_token: :auto }
     end
   end
 end

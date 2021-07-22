@@ -11,7 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/home";
 
 body {
   background-color: $black;
+  color: $light-gray;
 }
