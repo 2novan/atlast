@@ -1,0 +1,18 @@
+<br>
+<div class="album-card">
+  <%= image_tag(release.image_url, :alt => release.name, class: "album-cover" ) %>
+  <div class="album-info">
+    <div class="album-text">
+      <div class="album-name">
+        <h2><%= link_to release.artist.name.upcase , artist_path(release.artist)   %></h2>
+        <p><%= link_to release.name, release_path(release)  %></p>
+      </div>
+      <div class="tracklist-info">
+          <p><%= release.total_tracks %> <%= release.total_tracks > 1 ? "tracks" : "track" %> -  <%= release.formatted_duration%></p> 
+      </div>
+    </div>
+    <div class="release-date">
+      <p><%= release.release_date %></p>
+    </div>
+  </div>
+</div>
