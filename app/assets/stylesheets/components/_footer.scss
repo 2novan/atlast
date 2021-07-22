@@ -4,11 +4,14 @@
   height: 3rem;
   display: flex;
   position: absolute;
-  bottom: 0;
+  // bottom: 0;
   width: 100%;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: row;
+  margin-top: auto;
+  clear: both;
+
 
   img {
     height: 3rem;

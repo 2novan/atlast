@@ -3,7 +3,7 @@
   <div class="artist-info">
     <div class="artist-description">
       <p><%= artist.name  %></p>
-      <p><%= rand(1000..1000000)  %>followers</p>
+      <p><%= rand(1000..1000000)  %> followers</p>
     </div>
     <% if true #should be is_artist_followed %>
       <%= image_tag("plus.svg", :alt => "plus", class: "add-icon") %>
