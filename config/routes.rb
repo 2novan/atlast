@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'newsfeeds/index'
+  get '/search' => 'pages#search', :as => 'search_page'
   unauthenticated do
     root to: 'pages#home'
   end

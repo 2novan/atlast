@@ -1,0 +1,18 @@
+<div class="container">
+  <% if @results.blank? %>
+    <p>No artist found</p>
+  <% else %>
+    <div class="row">
+
+      <p><%= @results_number%> artists found</p>
+      <% @results.each do |artist| %>
+        <div class="col 3">
+          <%= artist.name %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+<%# <%= render partial: "artist/card", locals: {artist: artist} %>

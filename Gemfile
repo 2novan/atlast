@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'omniauth-spotify'
 gem "omniauth-rails_csrf_protection"
 gem 'rspotify', '~> 2.10.2'
+gem 'repost'
 
 group :development, :test do
   gem 'pry-byebug'
