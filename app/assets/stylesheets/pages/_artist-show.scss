@@ -1,0 +1,69 @@
+.artist-container {
+  height: 4rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1.4fr 0.4fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  grid-template-areas: "artist-picture artist-description add-remove";
+  border-bottom: 1px solid $blue;
+}
+.artist-picture {
+  grid-area: artist-picture;
+  height: 100%;
+}
+.artist-description {
+  grid-area: artist-description;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+
+  h1 {
+    color: $blue;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .artist-name p {
+    font-size: 0.6rem;
+    color: $text-gray;
+  }
+  .birthdate {
+    color: $text-gray;
+    font-size: 0.6rem;
+  }
+  .genre {
+    font-size: 0.6rem;
+  }
+}
+.add-remove {
+  grid-area: add-remove;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  with: 2rem;
+}
+
+.artist-next-event {
+  margin-top: 5.4rem;
+  border-top: 1px solid $blue;
+  padding-top: 1rem;
+}
+
+.concert {
+  padding-top: 1rem;
+
+  h1 {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.release {
+  padding-top: 1rem;
+
+  h1 {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+  }
+}
