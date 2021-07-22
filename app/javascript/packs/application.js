@@ -27,6 +27,7 @@ import "stylesheets/application";
 
 // External imports
 // import "bootstrap";
+import { initSwiper } from '../plugins/init_swiper';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

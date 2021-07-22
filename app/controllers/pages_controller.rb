@@ -4,6 +4,11 @@ class PagesController < ApplicationController
   def home
   end
 
+  def welcome
+    # @artistscount = @spotify_user.artists
+    @skip_footer = true
+  end
+
   def components
     @artists = Artist.all
   end
@@ -14,6 +19,7 @@ class PagesController < ApplicationController
     else
       @parameter = params[:search].downcase
       @results =  RSpotify::Artist.search("%#{@parameter}%").first(5)
+      # @results = Artist.where("name ILIKE ?", "%#{@parameter}%").first(5)
       @results_number = RSpotify::Artist.search("%#{@parameter}%").count
 
       # @results.each do |spotify_artist|
@@ -33,8 +39,6 @@ class PagesController < ApplicationController
       #     end
       #   end
       # end
-
-      # @results = Artist.where("name ILIKE ?", "%#{@parameter}%").first(5)
     end
   end
 end
