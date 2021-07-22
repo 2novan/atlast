@@ -20,7 +20,7 @@ module Spotify
         end
         spotify_artist.albums.each do |release|
           sleep 0.05
-          
+
           # binding.pry
           release_date = release.release_date =~ /\d{4}-\d{2}-\d{2}/ ? release.release_date : Date.new(release.release_date.to_i, 1, 1)
           album = Release.where({name: release.name, album_type: release.album_type, artist_id: artist, image_url: release.images.last["url"], total_tracks: release.total_tracks, artist_id: artist, release_date: release_date, spotify_id: release.id}).first_or_create
@@ -36,8 +36,8 @@ module Spotify
       # end
 
         # Recuperer les genres et les envoyer dans la table genre puis les associer avec genre_id
-      
-          # genres each 
+
+          # genres each
           #   genre = Genre first_or_create
           #   GenreArtist..where(genre: genre, artist: artist).first_or_create
     end
