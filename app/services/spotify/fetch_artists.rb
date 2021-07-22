@@ -29,27 +29,27 @@ module Spotify
 
         #Fetching releases
 
-        spotify_artist.albums.each do |release|
+        spotify_artist.albums.each do |spotify_album|
           sleep 0.05
 
           release_date =
-            case release.release_date_precision
-              when "year"  then Date.new(release.release_date.to_i, 1 , 1)
+            case spotify_album.release_date_precision
+              when "year"  then Date.new(spotify_album.release_date.to_i, 1 , 1)
               when "month" then Date.new(*str.split("-").map(&:to_i), 1)
-            else release.release_date
+            else spotify_album.release_date
             end          
 
-          album = Release.find_or_create_by(spotify_id: spotify_artist.id)
-          album.update!(
-            name:         release.name, 
-            album_type:   release.album_type, 
+          release = Release.find_or_create_by(spotify_id: spotify_album.id)
+          release.update!(
+            name:         spotify_album.name, 
+            album_type:   spotify_album.album_type, 
             artist:       artist, 
-            image_url:    release.images.last&.fetch("url"), 
-            total_tracks: release.total_tracks, 
+            image_url:    spotify_album.images.last&.fetch("url"), 
+            total_tracks: spotify_album.total_tracks, 
             release_date: release_date
           )
 
-          release.tracks.each do |spotify_track|
+          spotify_album.tracks.each do |spotify_track|
             sleep 0.05
 
             track = Track.find_or_create_by(spotify_id: spotify_track.id)
@@ -57,7 +57,7 @@ module Spotify
               name:         spotify_track.name, 
               duration:     spotify_track.duration_ms, 
               track_number: spotify_track.track_number, 
-              release:      album
+              release:      release
             )
 
             TrackArtist.where(track: track, artist: artist).first_or_create!
