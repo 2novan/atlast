@@ -3,15 +3,14 @@
     <p>No artist found</p>
   <% else %>
     <div class="row">
-      <%= @results.count %>
-      <p>artists found</p>
+
+      <p><%= @results_number%> artists found</p>
       <% @results.each do |artist| %>
         <div class="col 3">
           <%= artist.name %>
         </div>
       <% end %>
     </div>
-    <p>Similar artists</p>
   <% end %>
 </div>
 
