@@ -1,4 +1,5 @@
 <br>
+<div class="container">
   <div class="expanded-album-card">
     <%= image_tag(release.image_url, :alt => release.name, class: "album-cover" ) %>
     <div class="album-info">
@@ -15,11 +16,13 @@
         <p><%= release.release_date %></p>
       </div>
     </div>
-    <div class="album-tracks">
+  <div class="separation-line"></div>
+  </div>
+  <div class="album-tracks">
       <ul>
       <% release.tracks.each do |track| %>
-        <li><%= track.track_number %> - <%= track.name %></li>
+        <li><%= track.track_number %> - <%= track.name %> - <%= track.duration %> </li>
       <% end %>
       </ul>
-    </div>
   </div>
+</div>

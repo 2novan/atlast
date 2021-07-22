@@ -1,3 +1,25 @@
+.container {
+  background-color: $gray;
+  color: $light-gray;
+  border-bottom: 0.2rem solid $blue;
+  border-right: 1rem solid $blue;
+  margin-bottom: 1rem;
+
+  .album-tracks {
+    border-top: 1px solid $light-gray;
+    font-size: 0.8rem;
+    width: 100%;
+    padding-left: 1rem;
+    color: $text-gray;
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.4rem;
+    margin-top: 0.4rem;
+    padding-top: 0.5rem;
+
+
+
+  }
+}
 .expanded-album-card {
   // height: 6rem;
   display: flex;
@@ -7,12 +29,15 @@
   flex-direction: row;
   color: $light-gray;
   background-color: $gray;
-  border-bottom: 0.2rem solid $blue;
-  border-right: 1rem solid $blue;
-  margin-bottom: 1rem;
+  // border-bottom: 0.2rem solid $blue;
+  // border-right: 1rem solid $blue;
+  // margin-bottom: 1rem;
   .album-cover {
     height: 100%;
+    width: 35%;
   }
+
+
 
   .album-info {
     height: 100%;
@@ -59,7 +84,8 @@
     color: $text-gray;
   }
 
-  .album-tracks {
-    font-size: 0.8rem;
+  
+  .separation-line {
+    border-top: 5rem solid red;
   }
 }
