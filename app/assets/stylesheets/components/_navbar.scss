@@ -6,6 +6,11 @@
   font-size: 8px;
   border-bottom: 1px solid $light-gray;
 
+  #logo {
+    height: 35px;
+    width: 35px;
+  }
+
   * {
     border: 0;
     box-sizing: border-box;
@@ -167,9 +172,4 @@
       background: #f1f1f1;
     }
   }
-}
-
-#navbar img {
-  margin: 0.5rem;
-  margin-left: 1rem;
 }
