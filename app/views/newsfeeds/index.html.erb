@@ -1,2 +1,3 @@
-<h1>Newsfeeds#index</h1>
-<p>Find me in app/views/newsfeeds/index.html.erb</p>
+<% @artists.each do |artist| %>
+<%= render "shared/artist_card", artist: artist %>
+<% end %>
