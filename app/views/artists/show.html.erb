@@ -1,37 +1,40 @@
 <div class="artist-page-container">
-<div class="artist-container">
-  <div class="artist-picture">
-    <%= image_tag(@artist.image_url, :alt => @artist.name) %>
-  </div>
-  <div class="artist-description">
-    <div class="artist-name">
-      <h1><%= @artist.name.upcase %></h1>
-      <p><%= rand(1000..1100000) %> followers </p>
+  <div class="artist-container">
+    <div class="artist-picture">
+      <%= image_tag(@artist.image_url, :alt => @artist.name) %>
     </div>
-    <div class="genre-desc">
-      <p class="birthdate">Born in <%= rand(1980..2000) %></p>
-      <p class="genre"><%= @genre.map {|genre| "#{genre} -" }.join("\n").delete_suffix("-") %></p>
+    <div class="artist-description">
+      <div class="artist-name">
+        <h1><%= @artist.name.upcase %></h1>
+        <p><%= rand(1000..1100000) %> followers </p>
+      </div>
+      <div class="genre-desc">
+        <p class="birthdate">Born in <%= rand(1980..2000) %></p>
+        <p class="genre"><%= @genre.map {|genre| "#{genre} -" }.join("\n").delete_suffix("-") %></p>
+      </div>
     </div>
-  </div>
-  <div class="add-remove">
-    <% if true #should be is_artist_followed %>
-        <%= image_tag("plus.svg", :alt => "plus", class: "add-icon") %>
-      <% else %>        
-      <%= link_to root_path do %>
-        <%= image_tag("minus-circle.svg", :alt => "minus", class: "remove-icon") %>
+    <div class="add-remove">
+      <% if @artist.followed_by?(current_user) %>
+        <%= link_to my_artist_path(@artist), method: :delete do %>
+          <%= image_tag("minus-circle.svg", :alt => "minus", class: "remove-icon") %>
+        <% end %>
+      <% else %>
+        <%= link_to artist_my_artists_path(@artist), method: :post do %>
+          <%= image_tag("plus.svg", :alt => "plus", class: "add-icon") %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
-<div class="artist-next-event">
-  <div class="release">
-    <h1>LATEST RELEASE</h1>
-    <%= render 'shared/release_card', release: @release%>
-  </div>
-  <div class="concert">
-    <h1>NEXT CONCERT</h1>
-    <%= render 'shared/concert_card' %>
-  </div>
+  <div class="artist-next-event">
+    <div class="release">
+      <h1>LATEST RELEASE</h1>
+      <%= render 'shared/release_card', release: @release%>
+    </div>
+    <div class="concert">
+      <h1>NEXT CONCERT</h1>
+      <%= render 'shared/concert_card' %>
+    </div>
     <div class="fill">
     </div>
+  </div>
 </div>
