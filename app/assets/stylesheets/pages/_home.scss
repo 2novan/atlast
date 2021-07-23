@@ -1,1 +1,29 @@
-// Specific CSS for your home-page
+#home {
+  background-image: asset-url("images/concert.jpg");
+  width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  position: relative;
+
+  .title {
+    font-weight: bold;
+    font-size: 24px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .login a {
+    position: absolute;
+    width: 80vw;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 2px solid $blue;
+    border-radius: 5px;
+    padding: 0.5em 4em;
+  }
+}
