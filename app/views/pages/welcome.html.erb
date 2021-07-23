@@ -10,8 +10,9 @@
     </div>
     <div class="swiper-slide">
       <h1 id="message"> My artits </h1>
-      <% render "components/artist-card", artist: @artist %>
-      <%# <% @spotify_user.artists.first(4). each do |artist| %> %>
+        <% @artists.first(4).each do |artist| %>
+          <%= render "shared/artist_card", artist: artist %>
+        <% end %>
     </div>
     <div class="swiper-slide">
     </div>
