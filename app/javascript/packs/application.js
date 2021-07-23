@@ -13,12 +13,14 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-// External imports :
+// External imports
+// Tailwind CSS
+import "stylesheets/application";
 
-// Internal imports :
+// Internal imports:
 import { initSwiper } from '../plugins/init_swiper';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here :
+  // Call your functions here, e.g:
   initSwiper();
 });
