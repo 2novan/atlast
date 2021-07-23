@@ -1,6 +1,0 @@
-<div class="filters">
-  <strong><p><i class="fas fa-headphones-alt"></i> Latest releases</p></strong>
-</div>
-<% @releases.order(release_date: :desc).each do |release| %>
-<%= render "shared/release_card", release: release %>
-<% end %>
