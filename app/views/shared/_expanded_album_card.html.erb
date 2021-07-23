@@ -21,7 +21,7 @@
   <div class="album-tracks">
     <ul>
       <% release.tracks.each do |track| %>
-        <li><%= track.track_number %> - <%= track.name %> - <%= Time.at(track.duration/1000.0).utc.strftime("%M:%S") %> </li>
+        <li class="track"><%= track.track_number %> - <%= track.name %>  <span> <%= Time.at(track.duration/1000.0).utc.strftime("%M:%S") %> </span> </li>
       <% end %>
     </ul>
   </div>

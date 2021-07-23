@@ -17,7 +17,9 @@
       <% if true #should be is_artist_followed %>
         <%= image_tag("plus.svg", :alt => "plus", class: "add-icon") %>
       <% else %>
-        <%= image_tag("minus-circle.svg", :alt => "minus", class: "remove-icon") %>
+        <%= link_to root_path do %>
+          <%= image_tag("minus-circle.svg", :alt => "minus", class: "remove-icon") %>
+        <% end %>
       <% end %>
     </div>
   </div>
