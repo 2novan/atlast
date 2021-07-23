@@ -12,9 +12,9 @@ class PagesController < ApplicationController
     if params[:search].blank?
       redirect_to(root_path, alert: "Empty field!") and return
     else
-      @parameter = params[:search].downcase
-      @results =  RSpotify::Artist.search("%#{@parameter}%").first(5)
-      @results_number = RSpotify::Artist.search("%#{@parameter}%").count
+      # @parameter = params[:search].downcase
+      # @results =  RSpotify::Artist.search("%#{@parameter}%").first(5)
+      # @results_number = RSpotify::Artist.search("%#{@parameter}%").count
 
       # @results.each do |spotify_artist|
       #   artist = Artist.where({name: spotify_artist.name, spotify_id: spotify_artist.id, image_url: spotify_artist.images.last&.fetch("url") }).first_or_create
@@ -34,7 +34,7 @@ class PagesController < ApplicationController
       #   end
       # end
 
-      # @results = Artist.where("name ILIKE ?", "%#{@parameter}%").first(5)
+      @results = Artist.where("name ILIKE ?", "%#{params[:search]}%").first(5)
     end
   end
 end
