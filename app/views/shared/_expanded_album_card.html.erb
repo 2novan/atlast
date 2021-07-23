@@ -9,20 +9,20 @@
           <p><%= link_to release.name, release_path(release)  %></p>
         </div>
         <div class="tracklist-info">
-            <p><%= release.total_tracks %> <%= release.total_tracks > 1 ? "tracks" : "track" %> -  <%= release.formatted_duration%></p> 
+          <p><%= release.total_tracks %> <%= release.total_tracks > 1 ? "tracks" : "track" %> -  <%= release.formatted_duration%></p>
         </div>
       </div>
       <div class="release-date">
         <p><%= release.release_date %></p>
       </div>
     </div>
-  <div class="separation-line"></div>
+    <div class="separation-line"></div>
   </div>
   <div class="album-tracks">
-      <ul>
+    <ul>
       <% release.tracks.each do |track| %>
         <li class="track"><%= track.track_number %> - <%= track.name %>  <span> <%= Time.at(track.duration/1000.0).utc.strftime("%M:%S") %> </span> </li>
       <% end %>
-      </ul>
+    </ul>
   </div>
 </div>

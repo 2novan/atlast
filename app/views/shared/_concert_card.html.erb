@@ -2,15 +2,15 @@
   <div class="concert-info">
     <div class="concert-text">
       <div class="concert-name">
-        <h2>SERGE LAMA</h2>
+        <h2><%= @artist.name %></h2>
       </div>
       <div class="concert-city">
-        <p><i class="fas fa-map-marker-alt"></i> Nantes</p>
+        <p><i class="fas fa-map-marker-alt"></i> <%= %w[Paris Lyon Nantes Marseille Bordeaux Berlin Barcelona Angers Trellaze Marrakech Marlie-Gomon].sample %></p>
       </div>
     </div>
     <div class="concert-date">
-      <p>4 Sept. 21</p>
-      <p><i class="fas fa-users"></i> 2342 attendes</p>
+      <p><%= rand(2021..2022) %>-<%= rand(10..12) %>-<%= rand(1..30) %></p>
+      <p><i class="fas fa-users"></i> <%= rand(2000..20000) %> attendes</p>
     </div>
   </div>
 </div>
