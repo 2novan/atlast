@@ -1,5 +1,4 @@
 .artist-container {
-  height: 4rem;
   display: grid;
   grid-template-columns: 1.4fr 1.4fr 0.4fr;
   grid-template-rows: 1fr;
@@ -45,16 +44,16 @@
 }
 
 .artist-next-event {
-  margin-top: 5.4rem;
   border-top: 1px solid $blue;
   padding-top: 1rem;
+  height: inherit;
 }
 
 .concert {
   padding-top: 1rem;
 
   h1 {
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     padding-left: 1rem;
   }
 }
@@ -66,4 +65,8 @@
     margin-bottom: 1rem;
     padding-left: 1rem;
   }
+}
+
+.artist-page-container {
+  height: 100vh;
 }
