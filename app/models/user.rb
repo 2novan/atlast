@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :followed_artists
   has_many :artists, through: :followed_artists
 
-  def self.find_for_spotify_oauth(auth)
+  def self.find_for_spotify_oauth(auth) # rubocop:disable Metrics/MethodLength
     user_params = auth.slice("provider", "uid")
     user_params[:email] = auth.info.email
     user_params[:avatar_url] = auth.info.image
@@ -18,14 +18,17 @@ class User < ApplicationRecord
     user ||= User.find_by(email: auth.info.email) # User did a regular sign up in the past.
     if user
       user.update(user_params)
-      Spotify::FetchArtists.new(user).call
     else
       user = User.new(user_params)
       user.password = Devise.friendly_token[0, 20]  # Fake password for validation
       user.save
-      Spotify::FetchArtists.new(user).call
     end
+    Spotify::FetchArtists.new(user).call
 
     return user
+  end
+
+  def following?(artist)
+    artist.followed_by?(self)
   end
 end
