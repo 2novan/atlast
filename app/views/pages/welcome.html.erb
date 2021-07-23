@@ -1,22 +1,39 @@
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
+
+<div class= "display-container">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="welcome-container">
+          <h1 id="message"> 64 </h1>
+          <h1 id="message"> Favorites </h1>
+          <h1 id="message"> artists added </h1>
+          <%= image_tag('check-circle.svg', class: "validation")%>
+        </div>
+      </div>
+      <div class="swiper-slide">
       <div class="welcome-container">
-        <h1 id="message"> X </h1>
-        <h1 id="message"> Favorites </h1>
-        <h1 id="message"> artists added </h1>
-        <%= image_tag('check-circle.svg', class: "validation")%>
+        <h1 id="myartists"> My artists </h1>
+          <% @artists.first(5).each do |artist| %>
+            <%= render "shared/artist_card", artist: artist %>
+          <% end %>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="welcome-container">
+          <h1 id="artistselection"> Add other artists : </h1>
+            <div class='cards-artist'>
+            <% @artists.first(4).each do |artist| %>
+              <%= render "shared/add_artist_card", artist: artist %><% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="swiper-slide">
-      <h1 id="message"> My artits </h1>
-        <% @artists.first(4).each do |artist| %>
-          <%= render "shared/artist_card", artist: artist %>
-        <% end %>
-    </div>
-    <div class="swiper-slide">
-    </div>
+    <div class="step swiper-pagination"></div>
   </div>
-  <div class="step swiper-pagination"></div>
 </div>
 <%= image_tag('arrow-right.svg', class: "next swiper-button-next")%>
+
+</button class="buttoncompleted">
+  <%= link_to "Completed" , newsfeed_path %>
+<button>
