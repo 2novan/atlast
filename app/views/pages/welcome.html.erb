@@ -12,7 +12,7 @@
       </div>
       <div class="swiper-slide">
       <div class="welcome-container">
-        <h1 id="myartists"> My artists </h1>
+        <h1 id="myartists"> My artists  </h1>
           <% @artists.first(5).each do |artist| %>
             <%= render "shared/artist_card", artist: artist %>
           <% end %>
