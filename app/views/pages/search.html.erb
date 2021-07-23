@@ -2,17 +2,12 @@
   <% if @results.blank? %>
     <p>No artist found</p>
   <% else %>
-    <div class="row">
-
+    <div class="">
       <p><%= @results_number%> artists found</p>
       <% @results.each do |artist| %>
-        <div class="col 3">
-          <%= artist.name %>
-        </div>
+        <%= render "shared/artist_card", artist: artist %>
       <% end %>
     </div>
   <% end %>
 </div>
-
-
 <%# <%= render partial: "artist/card", locals: {artist: artist} %>
