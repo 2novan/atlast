@@ -1,3 +1,7 @@
+
+.page-container {
+  height: 100vh;
+}
 .container {
   background-color: $gray;
   // color: $light-gray;
@@ -5,6 +9,8 @@
   border-right: 1rem solid $blue;
   margin-bottom: 3rem;
   padding-left: 0.2rem;
+  margin-top: 0.5rem;
+
 
   .album-tracks {
     border-top: 1px solid $light-gray;

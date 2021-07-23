@@ -14,7 +14,7 @@ module Spotify
         artist = Artist.find_or_create_by(spotify_id: spotify_artist.id)
 
         artist.update!(
-          name:      spotify_artist.name,
+          name:      spotify_artist.name
           image_url: spotify_artist.images.last&.fetch("url")
         )
         sleep 0.05
