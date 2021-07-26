@@ -43,7 +43,7 @@ module Spotify
             name: spotify_album.name,
             album_type: spotify_album.album_type,
             artist: artist,
-            image_url: spotify_album.images.last&.fetch("url"),
+            image_url: spotify_album.images.second&.fetch("url"),
             total_tracks: spotify_album.total_tracks,
             release_date: release_date
           )

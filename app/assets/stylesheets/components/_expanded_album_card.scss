@@ -13,18 +13,20 @@
   .artist {
     display: grid;
     place-content: center;
-    padding: 0.8rem;
+    padding: 1rem;
+    padding-top: 1.5rem;
     background: $separation-gray;
     h2 {
-      color: $blue;
+      color: white;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 1.4rem;
       text-align: center;
+      margin-top: 1rem;
     }
   }
 
   .artist-cover {
-    height: 60px;
+    height: 100px;
     align-self: center;
     border-radius: 50%;
   }
@@ -67,6 +69,7 @@
   .album-info {
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     flex-grow: 1;
@@ -76,27 +79,23 @@
   .album-text {
     height: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: space-between;
     flex-grow: 1;
-    flex-direction: column;
     font-size: 1rem;
+    width: -moz-available;
     
   }
   .album-name{
     display: flex;
     flex-direction: column;
     justify-content: start;
-  }
-  .album-name h2 {
-    color: $blue;
-    font-weight: bold;
-    font-size: 1rem;
+    // font-weight: bolder;
   }
 
   .album-name p {
-    color: $light-gray;
-    font-size: 0.9rem;
+    color:white;
+    font-size: 1rem;
   }
 
   .tracklist-info {
@@ -105,9 +104,6 @@
   }
 
   .release-date {
-    display: inline;
-    text-align: start;
-    height: 100%;
     font-size: 0.8rem;
     color: $text-gray;
     p {

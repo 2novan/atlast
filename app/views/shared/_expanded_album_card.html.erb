@@ -1,25 +1,25 @@
 <div class="page-container">
   <div class="container">
   <div class="artist">
-  <%= link_to artist_path(release.artist) do  %>
-      <%= image_tag(release.artist.image_url, :alt => release.artist.name, class: "artist-cover" ) %>
-      <h2><%= link_to release.artist.name.upcase , artist_path(release.artist)   %></h2>
-  <% end %>
+    <%= link_to artist_path(release.artist) do  %>
+        <%= image_tag(release.artist.image_url, :alt => release.artist.name, class: "artist-cover" ) %>
+        <h2><%= release.artist.name.upcase %></h2>
+    <% end %>
   </div>
     <div class="expanded-album-card">
       <%= image_tag(release.image_url, :alt => release.name, class: "album-cover" ) %>
       <div class="album-info">
+        <div class="album-name">
+          <p><%= release.name  %></p>
+        </div>
         <div class="album-text">
-          <div class="album-name">
-            <p><%= release.name  %></p>
+          <div class="release-date">
+            <% r = release.release_date %>
+            <p><%= r.strftime('%d %b %Y')%></p>
           </div>
           <div class="tracklist-info">
             <p><%= release.total_tracks %> <%= release.total_tracks > 1 ? "tracks" : "track" %> -  <%= release.formatted_duration%></p>
           </div>
-        </div>
-        <div class="release-date">
-          <% r = release.release_date %>
-          <p><%= r.strftime('%d %b %Y')%></p>
         </div>
       </div>
       <div class="separation-line"></div>
