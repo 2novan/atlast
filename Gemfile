@@ -23,6 +23,8 @@ gem 'omniauth-spotify'
 gem "omniauth-rails_csrf_protection"
 gem 'rspotify', '~> 2.10.2'
 gem 'repost'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 group :development, :test do
   gem 'pry-byebug'
