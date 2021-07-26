@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
   get '/search' => 'pages#search', :as => 'search_page'
+  get '/playlist' => 'playlists#index', :as => 'playlist'
+  get '/playlist' => 'playlists#new', :as => 'new_playlist'
+
   unauthenticated do
     root to: 'pages#home'
   end
