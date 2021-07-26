@@ -29,10 +29,10 @@
         <% release.tracks.order(track_number: :asc).each do |track| %>
           <li class="track">
             <div class="left-info"><strong><%= track.track_number %></strong> - <%= track.name %> - <%= Time.at(track.duration/1000.0).utc.strftime("%M:%S") %> </div>
-            <%= label_tag "track_ids_#{track.track_number}" do %>
+            <%= label_tag "track_ids_#{track.spotify_id}" do %>
               <%= image_tag("plus.svg", :alt => "plus", class: "remove-icon", width: 40)%>
             <% end %>
-              <%= check_box_tag 'track_id[]', track.spotify_id, false, class: 'checkbox', id: "track_ids_#{track.spotify_id}" %>
+              <%= check_box_tag 'track_ids[]', track.spotify_id, false, class: 'checkbox', id: "track_ids_#{track.spotify_id}" %>
           </li>
         <% end %>
       </ul>

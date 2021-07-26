@@ -24,3 +24,10 @@
   background-color: #7E73FF;
   color: white;
 }
+
+.btn {
+  border: 1px solid $btn-color;
+  height: 2rem;
+  position: sticky;
+  top: 1rem;
+}
