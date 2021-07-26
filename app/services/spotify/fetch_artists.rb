@@ -27,6 +27,7 @@ module Spotify
         end
 
         ImportReleasesJob.perform_later(artist)
+        ScrapeArtistConcertsJob.perform_later(artist)
 
         # Fetching releases
 
