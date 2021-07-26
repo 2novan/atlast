@@ -1,5 +1,5 @@
 module Spotify
-  RSpotify.authenticate("99df90ccb6964e5cbe030a71e89dc1f5", "1b2dc82a4dca4d7f8b0f6026380bcede")
+  RSpotify.authenticate(ENV['SPOTIFY_ID'], ENV['SPOTIFY_SECRET'])
 
   class FetchArtists
     def initialize(user)
@@ -48,19 +48,23 @@ module Spotify
             release_date: release_date
           )
 
-          spotify_album.tracks.each do |spotify_track|
-            sleep 0.05
+          ImportTracksJob.perform_later(artist, release)
 
-            track = Track.find_or_create_by(spotify_id: spotify_track.id)
-            track.update!(
-              name: spotify_track.name,
-              duration: spotify_track.duration_ms,
-              track_number: spotify_track.track_number,
-              release: release
-            )
+          # FetchTracks.new(spotify_album, artist, release).call
 
-            TrackArtist.where(track: track, artist: artist).first_or_create!
-          end
+          # spotify_album.tracks.each do |spotify_track|
+          #   sleep 0.05
+
+          #   track = Track.find_or_create_by(spotify_id: spotify_track.id)
+          #   track.update!(
+          #     name: spotify_track.name,
+          #     duration: spotify_track.duration_ms,
+          #     track_number: spotify_track.track_number,
+          #     release: release
+          #   )
+
+          #   TrackArtist.where(track: track, artist: artist).first_or_create!
+          # end
         end
       end
     end
