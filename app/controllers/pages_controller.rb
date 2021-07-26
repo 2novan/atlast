@@ -9,6 +9,7 @@ class PagesController < ApplicationController
     # @artistscount = @spotify_user.artists
     @skip_footer = true
     @artists = Artist.all
+    @followed_artist = current_user.followed_artists.find_by(artist: @artist)
   end
 
   def components

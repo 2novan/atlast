@@ -16,6 +16,7 @@ require("channels")
 // External imports
 // Tailwind CSS
 import "stylesheets/application";
+import { slideSubmit } from '../components/slide_submit';
 
 // Internal imports:
 import { initSwiper } from '../plugins/init_swiper';
@@ -23,4 +24,6 @@ import { initSwiper } from '../plugins/init_swiper';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSwiper();
+  slideSubmit();
 });
+

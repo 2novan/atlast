@@ -3,10 +3,12 @@
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <div class="welcome-container">
-          <h1 id="message"> 64 </h1>
-          <h1 id="message"> Favorites </h1>
-          <h1 id="message"> artists added </h1>
+        <div class="welcome-container" style="height: 85vh;">
+          <div id="message">
+            <%# <h1><%= @followed_artist.count %></h1> %>
+            <h1> Favorites </h1>
+            <h1> artists added </h1>
+          </div>
           <%= image_tag('check-circle.svg', class: "validation")%>
         </div>
       </div>
@@ -22,7 +24,7 @@
         <div class="welcome-container">
           <h1 id="artistselection"> Add other artists : </h1>
             <div class='cards-artist'>
-            <% @artists.first(4).each do |artist| %>
+            <% @artists.first(6).each do |artist| %>
               <%= render "shared/add_artist_card", artist: artist %><% end %>
             </div>
           </div>
@@ -32,8 +34,15 @@
     <div class="step swiper-pagination"></div>
   </div>
 </div>
-<%= image_tag('arrow-right.svg', class: "next swiper-button-next")%>
 
-</button class="buttoncompleted">
-  <%= link_to "Completed" , newsfeed_path %>
-<button>
+
+<div id="button_next" class="hidden">
+  <%= image_tag('arrow-right.svg', class: "next swiper-button-next")%>
+  <%# <img class="next swiper-button-next" src=".../assets/images/arrow-right.svg" alt="Arrow next"> %>
+</div>
+
+
+<button id="button_home" class="hidden">
+  <%= link_to image_tag('arrow-circle-right.svg'), newsfeed_path, class: "next", style: "top: 93.4% !important;"%>
+  <%# <a href="/newsfeed"><img src=".../assets/images/arrow-right.svg" alt="Arrow next"></a> %>
+</button>
