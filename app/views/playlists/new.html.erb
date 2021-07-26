@@ -1,0 +1,6 @@
+<%= form_tag playlists_path, method: :post do %>
+  <% @releases.each do |release| %>
+    <%= render "shared/playlist_expanded_album_card.html", release: release %>
+  <% end %>
+  <%= submit_tag "Generate playlist", class:"btn" %>
+<% end %>

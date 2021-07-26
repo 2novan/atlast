@@ -1,13 +1,13 @@
 class PlaylistsController < ApplicationController
-
-  def index
-    @releases = Release.all
+  
+  def new
+    @releases = Release.all.order(release_date: :desc)
   end
 
-  def new(release)
+  def create
     user = RSpotify::User.new('credentials' => { 'token' => User.last.token })
     @playlist = user.create_playlist!("Atlast-Releases Playlist - #{DateTime.now}")
-    @playlist.add_tracks!(release.tracks)
-    
+    @playlist = []
+    @playlist.add(release.spotify_id)
   end
 end
