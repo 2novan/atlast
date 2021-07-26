@@ -1,27 +1,36 @@
 <div class="page-container">
   <div class="container">
+  <div class="artist">
+    <%= link_to artist_path(release.artist) do  %>
+        <%= image_tag(release.artist.image_url, :alt => release.artist.name, class: "artist-cover" ) %>
+        <h2><%= release.artist.name.upcase %></h2>
+    <% end %>
+  </div>
     <div class="expanded-album-card">
       <%= image_tag(release.image_url, :alt => release.name, class: "album-cover" ) %>
       <div class="album-info">
+        <div class="album-name">
+          <p><%= release.name  %></p>
+        </div>
         <div class="album-text">
-          <div class="album-name">
-            <h2><%= link_to release.artist.name.upcase , artist_path(release.artist)   %></h2>
-            <p><%= link_to release.name, release_path(release)  %></p>
+          <div class="release-date">
+            <% r = release.release_date %>
+            <p><%= r.strftime('%d %b %Y')%></p>
           </div>
           <div class="tracklist-info">
             <p><%= release.total_tracks %> <%= release.total_tracks > 1 ? "tracks" : "track" %> -  <%= release.formatted_duration%></p>
           </div>
-        </div>
-        <div class="release-date">
-          <p><%= release.release_date %></p>
         </div>
       </div>
       <div class="separation-line"></div>
     </div>
     <div class="album-tracks">
       <ul>
-        <% release.tracks.each do |track| %>
-          <li class="track"><%= track.track_number %> - <%= track.name %>  <span> <%= Time.at(track.duration/1000.0).utc.strftime("%M:%S") %> </span> </li>
+        <% release.tracks.order(track_number: :asc).each do |track| %>
+          <li class="track">
+            <div class="left-info"><strong><%= track.track_number %></strong> - <%= track.name %> </div>  
+            <span> <%= Time.at(track.duration/1000.0).utc.strftime("%M:%S") %> </span> 
+          </li>
         <% end %>
       </ul>
     </div>

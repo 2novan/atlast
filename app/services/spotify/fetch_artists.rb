@@ -10,7 +10,7 @@ module Spotify
     def call
       # Fetching Artists
 
-      @spotify_user.top_artists(limit: 10, offset: 0, time_range: 'medium_term').each do |spotify_artist|
+      @spotify_user.top_artists(limit: 1, offset: 0, time_range: 'medium_term').each do |spotify_artist|
         artist = Artist.find_or_create_by(spotify_id: spotify_artist.id)
 
         artist.update!(
@@ -43,7 +43,7 @@ module Spotify
             name: spotify_album.name,
             album_type: spotify_album.album_type,
             artist: artist,
-            image_url: spotify_album.images.last&.fetch("url"),
+            image_url: spotify_album.images.second&.fetch("url"),
             total_tracks: spotify_album.total_tracks,
             release_date: release_date
           )
