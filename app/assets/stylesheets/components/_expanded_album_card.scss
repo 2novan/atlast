@@ -8,20 +8,38 @@
   border-bottom: 0.2rem solid $blue;
   border-right: 1rem solid $blue;
   margin-bottom: 3rem;
-  padding-left: 0.2rem;
-  margin-top: 0.5rem;
+  // padding-left: 0.5rem;
 
+  .artist {
+    display: grid;
+    place-content: center;
+    padding: 0.8rem;
+    background: $separation-gray;
+    h2 {
+      color: $blue;
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+
+  .artist-cover {
+    height: 60px;
+    align-self: center;
+    border-radius: 50%;
+  }
 
   .album-tracks {
     border-top: 1px solid $light-gray;
     font-size: 0.8rem;
     width: 100%;
-    padding-left: 1rem;
     color: $text-gray;
-    padding-bottom: 0.2rem;
     margin-bottom: 0.4rem;
-    margin-top: 0.4rem;
-    padding-top: 0.5rem;
+    padding: .5rem 1rem .4rem 1rem;
+    li {
+      border-bottom: .5px solid $separation-gray;
+      padding: .5rem 0;
+    }
   }
 
 
@@ -37,6 +55,8 @@
   // border-bottom: 0.2rem solid $blue;
   // border-right: 1rem solid $blue;
   // margin-bottom: 1rem;
+  padding: 1rem;
+  height: 8rem;
   .album-cover {
     height: 100%;
     width: 35%;
@@ -50,9 +70,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-grow: 1;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 0.5rem;
+    padding-left: 1rem;               
   }
 
   .album-text {
@@ -63,14 +81,18 @@
     flex-grow: 1;
     flex-direction: column;
     font-size: 1rem;
+    
   }
-
+  .album-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
   .album-name h2 {
     color: $blue;
     font-weight: bold;
     font-size: 1rem;
   }
-
 
   .album-name p {
     color: $light-gray;
@@ -78,16 +100,19 @@
   }
 
   .tracklist-info {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     color: $text-gray;
   }
 
   .release-date {
-    align-items: end;
-    display: flex;
+    display: inline;
+    text-align: start;
     height: 100%;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     color: $text-gray;
+    p {
+      text-align: end;
+    }
   }
 
   
@@ -100,9 +125,6 @@
 .track {
   display: flex;
   justify-content: space-between;
-}
-
-span {
-  margin-right: 1rem;
-}
+  text-align: left;
+  }
 }
