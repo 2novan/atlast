@@ -32,7 +32,7 @@
             <%= label_tag "track_ids_#{track.spotify_id}" do %>
               <%= image_tag("plus.svg", :alt => "plus", class: "remove-icon", width: 40)%>
             <% end %>
-              <%= check_box_tag 'track_ids[]', track.spotify_id, false, class: 'checkbox', id: "track_ids_#{track.spotify_id}" %>
+              <%= check_box_tag 'track_ids[]', track.spotify_id, false, class: 'no-checkbox', id: "track_ids_#{track.spotify_id}" %>
           </li>
         <% end %>
       </ul>
