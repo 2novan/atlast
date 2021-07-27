@@ -7,39 +7,54 @@
   transform: scale(0);
 }
 
-.checkbox + label {
-  cursor: pointer;
-  display: inline-block;
-  font-size: 0.7rem;
-  border-radius: 50rem;
-  padding: 0.1rem 0.5rem;
-  background-color: #ECEAFF;
-  color: #7E73FF;
-  border: 1px solid #7E73FF;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
+.fas {
+  background: white;
+  border-radius: 50%;
+  padding: .75rem;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-content: center;
+  color: $black;
 }
 
-.checkbox:checked + label {
-  background-color: #7E73FF;
-  color: white;
+.fas:before {
+  content: "\f067";
+}
+
+.checkbox+i {
+  cursor: pointer;
+}
+
+.checkbox:checked+.fas:before{
+  content: "\f00c";
+  color: green;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  bottom: 4rem;
+  z-index: 10;
 }
 
 .btn-gradient {
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
+  border-radius: 12px;
   font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
-  transition: background 0.3s ease;
+  background: $btn-color;
+  transition: 0.3s ease;
   border: 1px solid #0F60C4;
   text-align: center;
-  height: 10vh;
-  position: sticky;
-  top: 100;
+  background-color: $separation-gray;
+  opacity: .7;
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
+  background: $background-release;
   color: white;
+  cursor: pointer;
+  opacity: 1;
 }

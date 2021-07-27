@@ -1,4 +1,4 @@
-<div class="playlist-page-container">
+<div class="playlist-page-container" data-controller="all-checkboxes">
   <div class="container">
     <div class="expanded-album-card">
       <%= image_tag(release.image_url, :alt => release.name, class: "album-cover" ) %>
@@ -18,8 +18,9 @@
         </div>
       </div>
         <div class="add-release-to-playlist">
-          <%= link_to new_playlist_path(release.tracks), title: "Add to my playlist" do %>
-            <%= image_tag("plus.svg", :alt => "plus", class: "remove-icon", width: 40)%>
+          <%= label_tag "release_ids_#{release.spotify_id}" do %>
+            <%= check_box_tag 'release_ids[]', release.spotify_id, false, class: 'checkbox', id: "release_ids_#{release.spotify_id}", 'data-action'=>"change->all-checkboxes#toggle"%>
+            <i class="fas fa-plus"></i>
           <% end %>
         </div>
       <div class="separation-line"></div>
@@ -29,10 +30,10 @@
         <% release.tracks.order(track_number: :asc).each do |track| %>
           <li class="track">
             <div class="left-info"><strong><%= track.track_number %></strong> - <%= track.name %> - <%= Time.at(track.duration/1000.0).utc.strftime("%M:%S") %> </div>
-            <%= label_tag "track_ids_#{track.spotify_id}" do %>
-              <%= image_tag("plus.svg", :alt => "plus", class: "remove-icon", width: 40)%>
-            <% end %>
-              <%= check_box_tag 'track_ids[]', track.spotify_id, false, class: 'no-checkbox', id: "track_ids_#{track.spotify_id}" %>
+              <%= label_tag "track_ids_#{track.spotify_id}" do %>
+                <%= check_box_tag 'track_ids[]', track.spotify_id, false, class: 'checkbox', id: "track_ids_#{track.spotify_id}", 'data-all-checkboxes-target'=>"box" %>
+                <i class="fas fa-plus"></i>
+              <% end %>
           </li>
         <% end %>
       </ul>

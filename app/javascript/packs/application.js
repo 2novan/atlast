@@ -36,4 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
+document.querySelectorAll("input[type='checkbox']")
+
 import "controllers"

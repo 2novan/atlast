@@ -13,4 +13,5 @@ class PlaylistsController < ApplicationController
     end
     playlist.add_tracks!(tracks)
   end
+  # redirect_to spotify
 end
