@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:spotify]
   has_many :followed_artists
   has_many :artists, through: :followed_artists
+  has_many :releases, through: :artists
 
   def self.find_for_spotify_oauth(auth) # rubocop:disable Metrics/MethodLength
     user_params = auth.slice("provider", "uid")
