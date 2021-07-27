@@ -2,7 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    redirect_to newsfeed_path if user_signed_in?
+    # redirect_to newsfeed_path if user_signed_in?
+    @disable_nav = true
+    @disable_footer = true
   end
 
   def welcome
@@ -21,7 +23,7 @@ class PagesController < ApplicationController
       redirect_to(root_path, alert: "Empty field!") and return
     else
       @parameter = params[:search].downcase
-       @results = Artist.where("name ILIKE ?", "%#{params[:search]}%").first(5)
+      @results = Artist.where("name ILIKE ?", "%#{params[:search]}%").first(5)
       # @results = Artist.where("name ILIKE ?", "%#{@parameter}%").first(5)
       @results_number = RSpotify::Artist.search("%#{@parameter}%").count
 

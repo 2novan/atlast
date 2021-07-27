@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   unauthenticated do
     root to: 'pages#home'
   end
+
   authenticated :user do
     root to: 'newsfeeds#show', as: :newsfeed
   end
-    get '/components' => 'pages#components'
+  get '/components' => 'pages#components'
   get '/welcome' => 'pages#welcome'
 
   get '/components' => 'pages#components'
