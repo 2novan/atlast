@@ -10,7 +10,7 @@ module Spotify
     def call
       # Fetching Artists
 
-      @spotify_user.top_artists(limit: 10, offset: 0, time_range: 'medium_term').each do |spotify_artist|
+      @spotify_user.top_artists(limit: 20, offset: 0, time_range: 'medium_term').each do |spotify_artist|
         artist = Artist.find_or_create_by(spotify_id: spotify_artist.id)
 
         artist.update!(
@@ -27,7 +27,7 @@ module Spotify
         end
 
         ImportReleasesJob.perform_later(artist)
-        ScrapeArtistConcertsJob.perform_later(artist)
+        # ScrapeArtistConcertsJob.perform_later(artist)
 
         # Fetching releases
 
