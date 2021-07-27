@@ -2,9 +2,20 @@
   <%= link_to "/" do %>
     <%= image_tag("logo.svg", :alt => "logo", id: "logo")%>
   <% end %>
-
-  <%= form_tag search_page_path, method: :get, class: "search-bar" do %>
-    <%= text_field_tag :search, params[:search], type: "search", placeholder: "Find an artist", required: "", novalidate: "novalidate"%>
-    <%= button_tag "", class: "search-btn", type: "submit"%>
-  <% end %>
+  <div class="wrap">
+    <%= form_tag search_page_path, method: :get, class: "search" do %>
+      <%= text_field_tag :search, params[:search], type: "search", placeholder: "Find an artist", novalidate: "novalidate", class: "input-text"%>
+      <%= button_tag class: "searchButton", type: "submit" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    <% end %>
+  </div>
 </div>
+<%# <div class="wrap">
+  <div class="search">
+    <input type="text" class="searchTerm" placeholder="What are you looking for?">
+    <button type="submit" class="searchButton">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</div> %>
