@@ -5,11 +5,12 @@
   gap: 1rem;
   grid-template-areas: "artist-picture artist-description add-remove";
   border-bottom: 1px solid $blue;
-}
+
 .artist-picture {
   grid-area: artist-picture;
   height: 100%;
 }
+
 .artist-description {
   grid-area: artist-description;
   display: flex;
@@ -36,13 +37,14 @@
     font-size: 0.6rem;
   }
 }
+
 .add-remove {
   grid-area: add-remove;
   padding-right: 0.5rem;
   padding-top: 0.5rem;
   with: 2rem;
 }
-
+}
 .artist-next-event {
   border-top: 1px solid $blue;
   padding-top: 1rem;

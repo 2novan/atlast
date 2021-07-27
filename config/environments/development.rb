@@ -7,7 +7,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-  config.consider_all_requests_local = false
+  config.consider_all_requests_local = true
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -54,6 +54,7 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+  config.assets.check_precompiled_asset = false
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true

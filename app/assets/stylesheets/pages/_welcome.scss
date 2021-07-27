@@ -14,19 +14,39 @@
 .next {
   height: 50px !important;
   width: 50px !important;
-  position: absolute !important;
-  top: 96.5% !important;
+  // position: absolute !important;
+  // top: 96.5% !important;
   right: 0 !important;
-  padding: 5px !important;
-  margin: 4px;
+  padding: 6px !important;
+  position: absolute;
 }
 
 .step {
-  top: 8% !important;
+  top: 6% !important;
   padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.pagination-bar {
+  background-color: $black;
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  position: fixed !important;
+}
+
+.title-bar {
+  background-color: $black;
+  margin: 0.2rem 0 ;
+  height: 2rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: white;
 }
 
 .swiper-pagination-bullet {
@@ -47,6 +67,24 @@
   margin-top: 15px;
 }
 
+.welcome-footer {
+  background-color: $black;
+  height: 3rem;
+  width: 100%;
+  bottom: 0 !important;
+  display: flex;
+  justify-content: end;
+  position: sticky;
+  z-index: 10;
+}
+
+.artist-slide {
+  padding-top: 4rem;
+}
+
+.success {
+  height: 85vh;
+}
 #message {
   color: white;
   display: flex;
@@ -54,15 +92,6 @@
   flex-direction: column;
   margin: 0;
   top: 97%;
-}
-
-#myartists {
-  color: white;
-  display: flex;
-  text-align: center;
-  margin-top: 4.8rem !important;
-  margin-bottom: 1.2rem !important;
-  font-style: 1.5rem;
 }
 
 #artistselection {
