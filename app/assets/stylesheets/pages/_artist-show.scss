@@ -1,50 +1,54 @@
 .artist-container {
   display: grid;
-  grid-template-columns: 1.4fr 1.4fr 0.4fr;
-  grid-template-rows: 1fr;
-  gap: 1rem;
-  grid-template-areas: "artist-picture artist-description add-remove";
-  border-bottom: 1px solid $blue;
+  place-content: center;
+  text-align: center;
+  position: relative;
+  padding: 1rem;
+  background: white;
+  color: $blue;
 }
 .artist-picture {
-  grid-area: artist-picture;
-  height: 100%;
+  display: grid;
+  place-content: center;
+
+  img {
+    border-radius: 50%;
+    height: 6rem;
+  }
 }
 .artist-description {
-  grid-area: artist-description;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
-  background-color: $black;
+  margin-top: 1rem;
 
   h1 {
-    color: $blue;
+    color: $black;
     font-weight: bold;
     font-size: 1.2rem;
   }
 
   .artist-name p {
     font-size: 1rem;
-    color: $text-gray;
   }
+
   .birthdate {
-    color: $text-gray;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
-  .genre {
-    font-size: 0.7rem;
+  .genre-desc {
+    margin: 0 5rem;
+
+    .genre {
+      font-size: 0.7rem;
+      margin-top: 0.5rem;
+    }
   }
 }
 .add-remove {
-  grid-area: add-remove;
-  padding-right: 0.5rem;
-  padding-top: 0.5rem;
-  with: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 
   .not-followed {
     font-size: 2rem;
+    color: $black;
   }
 
   .followed {
@@ -54,9 +58,7 @@
 }
 
 .artist-next-event {
-  border-top: 1px solid $blue;
   padding-top: 1rem;
-  height: inherit;
 }
 
 .concert {
@@ -69,7 +71,7 @@
 }
 
 .release {
-  padding-top: 1rem;
+  padding: 1rem 0.5rem 0 0.5rem;
 
   h1 {
     margin-bottom: 1rem;
