@@ -16,11 +16,11 @@
     <div class="add-remove">
       <% if @artist.followed_by?(current_user) %>
         <%= link_to my_artist_path(@artist), method: :delete do %>
-          <%= image_tag("minus-circle.svg", :alt => "minus", class: "remove-icon") %>
+          <i class="fas fa-heart followed"></i>
         <% end %>
       <% else %>
         <%= link_to artist_my_artists_path(@artist), method: :post do %>
-          <%= image_tag("plus.svg", :alt => "plus", class: "add-icon") %>
+          <i class="far fa-heart not-followed"></i>
         <% end %>
       <% end %>
     </div>

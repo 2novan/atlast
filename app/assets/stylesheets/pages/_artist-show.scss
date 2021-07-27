@@ -42,6 +42,15 @@
   padding-right: 0.5rem;
   padding-top: 0.5rem;
   with: 2rem;
+
+  .not-followed {
+    font-size: 2rem;
+  }
+
+  .followed {
+    font-size: 2rem;
+    color: $red;
+  }
 }
 
 .artist-next-event {
