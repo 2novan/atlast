@@ -1,6 +1,7 @@
 class NewsfeedsController < ApplicationController
 
   def show
-    @releases = Release.all
+    @releases = current_user.releases.order(release_date: :desc)
   end
+  
 end

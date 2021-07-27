@@ -1,7 +1,7 @@
 
 .playlist-page-container {
   padding-top: 1rem;
-  .container {
+  .playlist-container {
     background-color: $gray;
     // color: $light-gray;
     border-bottom: 0.2rem solid $blue;
@@ -25,7 +25,7 @@
 
   
   .artist-cover {
-    height: 80px;
+    height: 10rem;
     align-self: center;
     border-radius: 50%;
   }

@@ -27,10 +27,10 @@
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
   </head>
-  <%= render 'shared/navbar' unless @disable_nav %>
-  <%= render 'shared/flashes' %>
   <body>
+    <%= render 'shared/navbar' unless @disable_nav %>
+    <%= render 'shared/flashes' %>
     <%= yield %>
+    <%= render 'shared/footer' unless @disable_footer %>
   </body>
-  <%= render 'shared/footer' unless @disable_footer %>
 </html>
