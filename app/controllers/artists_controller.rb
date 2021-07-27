@@ -7,5 +7,6 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @genre = @artist.genres.collect { |g| (g[:name]).to_s }
     @release = @artist.releases.first
+    @concert = @artist.concerts.first
   end
 end

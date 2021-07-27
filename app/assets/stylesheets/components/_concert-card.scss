@@ -41,23 +41,23 @@
 
   .concert-name p {
     color: $light-gray;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .concert-city {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     color: $text-gray;
   }
 
   .concert-date {
-    padding-top: 1rem;
+    padding-top: 0.7rem;
     align-items: end;
     justify-content: space-between;
     flex-direction: column;
 
     display: flex;
     height: 100%;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     color: $text-gray;
   }
 

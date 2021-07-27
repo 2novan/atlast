@@ -30,10 +30,12 @@
       <h1>LATEST RELEASE</h1>
       <%= render 'shared/release_card', release: @release%>
     </div>
-    <div class="concert">
-      <h1>NEXT CONCERT</h1>
-      <%= render 'shared/concert_card' %>
-    </div>
+    <% if @concert %>
+      <div class="concert">
+        <h1>NEXT CONCERT</h1>
+        <%= render 'shared/concert_card', concert: @concert%>
+      </div>
+    <% end %>
     <div class="fill">
     </div>
   </div>
