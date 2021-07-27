@@ -15,8 +15,6 @@ Rails.application.routes.draw do
     get '/components' => 'pages#components'
   get '/welcome' => 'pages#welcome'
 
-  root to: 'pages#home'
-
   get '/components' => 'pages#components'
 
   resource :newsfeed, only: [:show]
