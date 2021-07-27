@@ -25,7 +25,7 @@ gem 'rspotify', '~> 2.10.2'
 gem 'repost'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
-gem 'songkickr'
+gem 'sidekiq-scheduler'
 
 group :development, :test do
   gem 'pry-byebug'

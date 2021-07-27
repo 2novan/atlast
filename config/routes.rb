@@ -4,9 +4,16 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
   get '/search' => 'pages#search', :as => 'search_page'
-  get '/welcome' => 'pages#welcome'
+  resources :playlists, only: [:create, :new]
 
-  root to: 'pages#home'
+  unauthenticated do
+    root to: 'pages#home'
+  end
+  authenticated :user do
+    root to: 'newsfeeds#show', as: :newsfeed
+  end
+    get '/components' => 'pages#components'
+  get '/welcome' => 'pages#welcome'
 
   get '/components' => 'pages#components'
 

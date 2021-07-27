@@ -27,3 +27,4 @@ document.addEventListener('turbolinks:load', () => {
   slideSubmit();
 });
 
+import "controllers"
