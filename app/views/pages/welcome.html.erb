@@ -1,11 +1,10 @@
-
 <div class= "display-container">
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <div class="welcome-container" style="height: 85vh;">
+        <div class="welcome-container success">
           <div id="message">
-            <%# <h1><%= @followed_artist.count %></h1> %>
+            <h1><%= @followed_artists.count %></h1>
             <h1> Favorites </h1>
             <h1> artists added </h1>
           </div>
@@ -13,36 +12,38 @@
         </div>
       </div>
       <div class="swiper-slide">
-      <div class="welcome-container">
-        <h1 id="myartists"> My artists  </h1>
-          <% @artists.first(5).each do |artist| %>
-            <%= render "shared/artist_card", artist: artist %>
+      <div class="welcome-container artist-slide">
+        <h1 class="title-bar"> My artists </h1>
+          <% @followed_artists.each do |followed_artist| %>
+            <%= render "shared/artist_card", artist: followed_artist.artist %>
           <% end %>
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="welcome-container">
-          <h1 id="artistselection"> Add other artists : </h1>
+        <div class="welcome-container artist-slide">
+          <h1 class="title-bar"> Add other artists : </h1>
             <div class='cards-artist'>
-            <% @artists.first(6).each do |artist| %>
+            <% @artists.first(10).each do |artist| %>
               <%= render "shared/add_artist_card", artist: artist %><% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="step swiper-pagination"></div>
+    <div class="step swiper-pagination pagination-bar"></div>
   </div>
 </div>
 
+<div class="welcome-footer">
+  <div id="button_next" class="hidden">
+    <%= image_tag('arrow-right.svg', class: "next swiper-button-next")%>
+    <%# <img class="next swiper-button-next" src=".../assets/images/arrow-right.svg" alt="Arrow next"> %>
+  </div>
 
-<div id="button_next" class="hidden">
-  <%= image_tag('arrow-right.svg', class: "next swiper-button-next")%>
-  <%# <img class="next swiper-button-next" src=".../assets/images/arrow-right.svg" alt="Arrow next"> %>
+  <button id="button_home" class="hidden next">
+    <%= link_to image_tag('arrow-circle-right.svg'), newsfeed_path%>
+    <%# <a href="/newsfeed"><img src=".../assets/images/arrow-right.svg" alt="Arrow next"></a> %>
+  </button>
 </div>
 
 
-<button id="button_home" class="hidden">
-  <%= link_to image_tag('arrow-circle-right.svg'), newsfeed_path, class: "next", style: "top: 93.4% !important;"%>
-  <%# <a href="/newsfeed"><img src=".../assets/images/arrow-right.svg" alt="Arrow next"></a> %>
-</button>

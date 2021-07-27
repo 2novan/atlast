@@ -7,8 +7,8 @@ const initSwiper =() => {
   const swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     loop: false,
-
     allowTouchMove: true,
+    // autoHeight: true,
 
     // Navigation arrows
     navigation: {
@@ -27,9 +27,11 @@ const initSwiper =() => {
     },
 
     // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
+    // scrollbar: {
+    //   el: '.swiper-scrollbar',
+    //   draggable: true,
+    //   dragSize: 'auto',
+    // },
 
     on: {
       init: function () {
