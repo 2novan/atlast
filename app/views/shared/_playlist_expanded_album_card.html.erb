@@ -1,0 +1,47 @@
+<div class="playlist-page-container" data-controller="all-checkboxes">
+  <div class="container">
+    <div class="expanded-album-card">
+      <%= image_tag(release.image_url, :alt => release.name, class: "album-cover" ) %>
+      <div class="album-info">
+        <div class="album-name">
+          <div class='name-info'>
+            <p id="release-name"><%= release.name  %></p>
+            <p id="release-artist"><%= release.artist.name %></p>
+          </div>
+
+          <div class="add-release-to-playlist">
+            <%= label_tag "release_ids_#{release.spotify_id}" do %>
+              <%= check_box_tag 'release_ids[]', release.spotify_id, false, class: 'checkbox', id: "release_ids_#{release.spotify_id}", 'data-action'=>"change->all-checkboxes#toggle"%>
+              <i class="fas fa-plus add-btn"></i>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="album-text">
+          <div class="release-date">
+            <% r = release.release_date %>
+            <p><%= r.strftime('%d %b %Y')%></p>
+          </div>
+          <div class="tracklist-info">
+            <p><%= release.total_tracks %> <%= release.total_tracks > 1 ? "tracks" : "track" %> -  <%= release.formatted_duration%></p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="separation-line"></div>
+    </div>
+    <div class="album-tracks">
+      <ul>
+        <% release.tracks.order(track_number: :asc).each do |track| %>
+          <li class="track">
+            <div class="left-info"><strong><%= track.track_number %></strong> - <%= track.name %> - <%= Time.at(track.duration/1000.0).utc.strftime("%M:%S") %> </div>
+              <%= label_tag "track_ids_#{track.spotify_id}" do %>
+                <%= check_box_tag 'track_ids[]', track.spotify_id, false, class: 'checkbox', id: "track_ids_#{track.spotify_id}", 'data-all-checkboxes-target'=>"box" %>
+                <i class="fas fa-plus add-btn"></i>
+              <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
