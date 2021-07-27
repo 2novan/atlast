@@ -17,6 +17,7 @@
   flex-direction: column;
   padding-top: 0.5rem;
   padding-bottom: 1rem;
+  background-color: $black;
 
   h1 {
     color: $blue;
@@ -25,15 +26,15 @@
   }
 
   .artist-name p {
-    font-size: 0.6rem;
+    font-size: 1rem;
     color: $text-gray;
   }
   .birthdate {
     color: $text-gray;
-    font-size: 0.6rem;
+    font-size: 1rem;
   }
   .genre {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
 }
 .add-remove {
