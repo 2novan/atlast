@@ -7,11 +7,14 @@
   flex-direction: row;
   color: $light-gray;
   background-color: $gray;
-  border-bottom: 0.2rem solid $blue;
-  border-left: 1rem solid $blue;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  border-right: 0.5rem solid $blue;
+  border-radius: 0.5rem;
+
   .album-cover {
     height: 100%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
   }
 
   .album-info {
@@ -20,9 +23,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-grow: 1;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 0.5rem;
+    padding: 0.2rem 0.5rem;
   }
 
   .album-text {
@@ -36,18 +37,22 @@
   }
 
   .album-name h2 {
-    color: $blue;
     font-weight: bold;
     font-size: 1rem;
   }
 
   .album-name p {
     color: $light-gray;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .tracklist-info {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     color: $text-gray;
   }
 
@@ -55,8 +60,7 @@
     align-items: end;
     display: flex;
     height: 100%;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     color: $text-gray;
   }
-  
 }
