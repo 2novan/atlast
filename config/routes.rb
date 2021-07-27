@@ -13,6 +13,14 @@ Rails.application.routes.draw do
     root to: 'newsfeeds#show', as: :newsfeed
   end
     get '/components' => 'pages#components'
+  get '/welcome' => 'pages#welcome'
+
+  root to: 'pages#home'
+
+  get '/components' => 'pages#components'
+
+  resource :newsfeed, only: [:show]
+
   resources :artists, only: [:index, :show] do
     resources :my_artists, only: [:create]
   end

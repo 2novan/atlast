@@ -1,0 +1,5 @@
+meta_product_name: "Atlast"
+meta_title: "Atlast - Never miss a song anymore"
+meta_description: "#1st music release tracker"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@princeponeyyy" # required for Twitter Cards
