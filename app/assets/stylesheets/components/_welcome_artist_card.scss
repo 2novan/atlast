@@ -1,0 +1,49 @@
+.artist-card {
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  color: $light-gray;
+  background-color: $gray;
+  margin-bottom: 0.8rem;
+
+  .artist-avatar {
+    height: 6rem;
+    width: 6rem;
+    background-size: cover;
+    margin-bottom: 0.8rem;
+  }
+
+  .artist-info {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .artist-description {
+    height: 100%;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  .add-icon,
+  .remove-icon {
+    height: 2.6rem;
+    margin-right: 1rem;
+  }
+}
+
+.artist-title {
+  text-align: center;
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+
+.fill {
+  height: 100vh;
+}

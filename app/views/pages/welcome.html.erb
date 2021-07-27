@@ -15,7 +15,7 @@
       <div class="welcome-container artist-slide">
         <h1 class="title-bar"> My artists </h1>
           <% @followed_artists.each do |followed_artist| %>
-            <%= render "shared/artist_card", artist: followed_artist.artist %>
+            <%= render "shared/welcome_artist_card", artist: followed_artist.artist %>
           <% end %>
         </div>
       </div>
