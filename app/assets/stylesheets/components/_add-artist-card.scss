@@ -2,8 +2,9 @@
   width: 9rem;
 
   .artist-avatar {
-    width: 100%;
     background-size: cover;
+    position: relative;
+    width: 100%;
   }
 
   .artist-name {
