@@ -23,7 +23,6 @@
     }
   }
 
-  
   .artist-cover {
     height: 15%;
     align-self: center;
@@ -43,10 +42,16 @@
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     padding: .5rem 1rem .4rem 1rem;
+
     li {
       border-bottom: .5px solid $separation-gray;
       padding: .5rem 0;
     }
+  }
+
+  .panel {
+    display: none;
+    overflow: hidden;
   }
   
   .expanded-album-card {
@@ -63,12 +68,14 @@
     // margin-bottom: 1rem;
     padding: 1rem;
     height: 8rem;
+    cursor: pointer;
+
     .album-cover {
-      height: 100%;
-      width: 35%;
+      object-fit: cover;
+      height: 6rem;
+      width: 6rem;
     }
   }
-  
   
   .album-info {
     height: 100%;
@@ -77,7 +84,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-grow: 1;
-    padding-left: 1rem;               
+    padding-left: 1rem;
   }
   
   .album-text {
@@ -121,7 +128,10 @@
   .separation-line {
     border-top: 5rem solid white;
   }
-  
+
+  .track-separator {
+    border-top: 1px solid white;
+  }
   
   
   .track {
