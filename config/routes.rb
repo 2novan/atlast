@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get '/search' => 'pages#search', :as => 'search_page'
   resources :playlists, only: [:create, :new]
 
-
   unauthenticated :user do
     root to: 'pages#home'
   end
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   get '/components' => 'pages#components'
-  get '/welcome' => 'pages#welcome'
+  get '/welcome' => 'pages#welcome', as: :welcome
 
   get '/components' => 'pages#components'
 

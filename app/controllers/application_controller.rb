@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
       repost user_spotify_omniauth_authorize_path, options: { authenticity_token: :auto }
     end
   end
+
+  def after_sign_up_path_for(resource_or_scope)
+    if resource_or_scope == :user
+      welcome_path
+    else
+      super
+    end
+  end
 end

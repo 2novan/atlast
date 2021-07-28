@@ -4,11 +4,11 @@ module Spotify
   class FetchUserTopArtists
     def initialize(user)
       @user = user
-      @spotify_user = RSpotify::User.new('credentials' => { 'token' => User.last.token })
+      @spotify_user = RSpotify::User.new('credentials' => { 'token' => @user.token })
     end
 
     def call
-      artists = @spotify_user.top_artists(limit: 50, offset: 0, time_range: 'long_term')
+      artists = @spotify_user.top_artists(limit: 10, offset: 0, time_range: 'long_term')
       imported_artists = Spotify::FetchArtists.new(artists).call
       imported_artists.each do |artist|
         @user.followed_artists.find_or_create_by(artist: artist)

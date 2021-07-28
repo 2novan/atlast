@@ -18,8 +18,10 @@ class User < ApplicationRecord
     user = User.find_by(provider: auth.provider, uid: auth.uid)
     user ||= User.find_by(email: auth.info.email) # User did a regular sign up in the past.
     if user
+      sign_up = false
       user.update(user_params)
     else
+      sign_up = true
       user = User.new(user_params)
       user.password = Devise.friendly_token[0, 20]  # Fake password for validation
       user.save
@@ -27,7 +29,7 @@ class User < ApplicationRecord
 
     Spotify::FetchUserTopArtists.new(user).call
 
-    return user
+    return [user, sign_up]
   end
 
   def following?(artist)
