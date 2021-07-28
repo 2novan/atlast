@@ -24,7 +24,8 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]  # Fake password for validation
       user.save
     end
-    Spotify::FetchArtists.new(user).call
+
+    Spotify::FetchUserTopArtists.new(user).call
 
     return user
   end

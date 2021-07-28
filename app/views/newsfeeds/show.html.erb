@@ -4,7 +4,7 @@
   </strong>
 </div>
 <div class="cards-releases">
-  <% @releases.order(release_date: :desc).each do |release| %>
+  <% @releases.each do |release| %>
     <%= render "shared/release_card", release: release %>
   <% end %>
 </div>

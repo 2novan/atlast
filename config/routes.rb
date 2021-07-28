@@ -6,12 +6,15 @@ Rails.application.routes.draw do
   get '/search' => 'pages#search', :as => 'search_page'
   resources :playlists, only: [:create, :new]
 
-  unauthenticated do
+
+  unauthenticated :user do
     root to: 'pages#home'
   end
+
   authenticated :user do
-    root to: 'newsfeeds#show', as: :newsfeed
+    root to: redirect("/newsfeed"), as: :authenticated_root
   end
+
     get '/components' => 'pages#components'
   get '/welcome' => 'pages#welcome'
 
