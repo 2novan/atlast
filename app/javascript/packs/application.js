@@ -24,6 +24,9 @@ import { slideSubmit } from '../components/slide_submit';
 import { initSwiper } from '../plugins/init_swiper';
 import { cardCollapse } from '../plugins/playlist_animation';
 
+// Custom
+import "controllers";
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSwiper();
@@ -31,5 +34,11 @@ document.addEventListener('turbolinks:load', () => {
   cardCollapse();
 });
 
-import "controllers";
+//Automatically close alerts after 5s
+$(document).on('turbolinks:load', function() {
+  setTimeout(function() {
+    $('.alert').fadeOut();
+  }, 3000);
+})
+
 

@@ -10,7 +10,7 @@
 .add-btn {
   background: white;
   border-radius: 50%;
-  padding: .75rem;
+  // padding: .75rem;
   width: 36px;
   height: 36px;
   display: grid;
@@ -33,7 +33,8 @@
 
 .btn-div {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+
   position: sticky;
   bottom: 4rem;
   z-index: 10;
