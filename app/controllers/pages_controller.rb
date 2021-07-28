@@ -10,6 +10,7 @@ class PagesController < ApplicationController
     @disable_footer = true
     @artists = Artist.all
     @followed_artists = current_user.followed_artists.includes(:artist)
+
   end
 
   def components

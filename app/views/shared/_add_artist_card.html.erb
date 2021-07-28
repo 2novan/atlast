@@ -1,5 +1,9 @@
+
 <div class="small-artist-card">
-  <%= image_tag(artist.image_url, :alt => artist.name, class: "artist-avatar" ) %>
+
+    <%= image_tag(artist.image_url, :alt => artist.name, class: "artist-avatar" ) %>
+    <%= render "shared/follow_artist_btn", artist: artist%>
+
   <div class="artist-name">
     <p><%= artist.name  %></p>
   </div>

@@ -6,14 +6,7 @@
       <p style="font-size: 14px;"><%= rand(1000..1000000)  %> followers</p>
     </div>
 
-
-
-    <%= link_to my_artist_path(artist), method: :delete do %>
-      <%= image_tag("minus-circle-red.svg", :alt => "minus", class: "remove-icon") %>
-    <% end %>
-
-
-
+    <%= render "shared/follow_artist_btn", artist: artist%>
 
   </div>
 </div>
