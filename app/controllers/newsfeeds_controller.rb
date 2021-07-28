@@ -6,5 +6,9 @@ class NewsfeedsController < ApplicationController
                             .includes(:artist)
                             .group("releases.id")
                             .order(release_date: :desc)
+
+    @concerts = Concert.all
+
+    @news = (@releases + @concerts).sort_by(&:newsfeed_date)
   end
 end

@@ -10,4 +10,8 @@ class Release < ApplicationRecord
   def formatted_duration
     Time.at(duration).utc.strftime("%H:%M:%S")
   end
+
+  def newsfeed_date
+    release_date
+  end
 end
