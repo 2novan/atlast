@@ -8,11 +8,15 @@ class PlaylistsController < ApplicationController
   def create
     r = DateTime.now
     user = RSpotify::User.new('id' => current_user.uid, 'credentials' => { 'token' => current_user.token })
-    playlist = user.create_playlist!("Atlast-Releases Playlist - #{r.strftime('%d %b %Y')}", public: false)
-    tracks = params[:track_ids].each do |spotify_track_id|
+    @playlist = user.create_playlist!("Atlast-Releases Playlist - #{r.strftime('%d %b %Y')}", public: false)
+    tracks = params[:track_ids].map do |spotify_track_id|
       "spotify:track:#{spotify_track_id}"
     end
-    playlist.add_tracks!(tracks)
-    redirect_to(newsfeed_path)
+    @playlist.add_tracks!(tracks)
+    if params[:generate_and_open]
+      redirect_to(@playlist.external_urls["spotify"])
+    else
+      redirect_to(newsfeed_path)
+    end
   end
 end
