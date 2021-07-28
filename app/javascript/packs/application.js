@@ -8,6 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+
+
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
@@ -20,11 +22,14 @@ import { slideSubmit } from '../components/slide_submit';
 
 // Internal imports:
 import { initSwiper } from '../plugins/init_swiper';
+import { cardCollapse } from '../plugins/playlist_animation';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSwiper();
   slideSubmit();
+  cardCollapse();
 });
 
-import "controllers"
+import "controllers";
+

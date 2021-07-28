@@ -1,10 +1,11 @@
-<%# <div data-controller="all-checkboxes"> %>
+<div class="animation-container">
   <%= form_tag playlists_path, method: :post do %>
     <% @releases.each do |release| %>
       <%= render "shared/playlist_expanded_album_card", release: release %>
     <% end %>
-    <div class='btn-div'>
-      <%= submit_tag "Generate playlist", class:"btn-gradient" %>
-    </div>
-  <% end %>
-<%# </div> %>
+</div>
+  <div class='btn-div'>
+    <%= submit_tag "Generate playlist", class:"btn-gradient" %>
+  </div>
+<% end %>
+<script src="app/javascript/stylesheets/playlistCard.js"></script> 
