@@ -5,14 +5,15 @@
       <p style="font-size: 22px; font-weight: bold;"><%= artist.name  %></p>
       <p style="font-size: 14px;"><%= rand(1000..1000000)  %> followers</p>
     </div>
-    <% if artist.followed_by?(current_user) %>
-      <%= link_to my_artist_path(artist), method: :delete do %>
-        <%= image_tag("minus-circle-red.svg", :alt => "minus", class: "remove-icon") %>
-      <% end %>
-    <% else %>
-      <%= link_to artist_my_artists_path(artist), method: :post  do %>
-        <%= image_tag("plus.svg", :alt => "plus", class: "add-icon") %>
-      <% end %>
+
+
+
+    <%= link_to my_artist_path(artist), method: :delete do %>
+      <%= image_tag("minus-circle-red.svg", :alt => "minus", class: "remove-icon") %>
     <% end %>
+
+
+
+
   </div>
 </div>
