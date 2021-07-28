@@ -33,6 +33,7 @@
     <div class="album-tracks">
       <ul>
         <% release.tracks.order(track_number: :asc).each do |track| %>
+              <div class="separation-line"></div>
           <li class="track">
             <div class="left-info"><strong><%= track.track_number %></strong> - <%= track.name %> - <%= Time.at(track.duration/1000.0).utc.strftime("%M:%S") %> </div>
               <%= label_tag "track_ids_#{track.spotify_id}" do %>
