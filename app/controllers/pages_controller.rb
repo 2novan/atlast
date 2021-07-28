@@ -5,6 +5,8 @@ class PagesController < ApplicationController
 
   def home
     # redirect_to newsfeed_path if user_signed_in?
+    @disable_nav = true
+    @disable_footer = true
   end
 
   def welcome

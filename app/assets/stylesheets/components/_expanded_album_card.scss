@@ -1,13 +1,13 @@
 .container {
-  height: 100vh;
+  min-height: 100vh;
 
   .artist {
     display: flex;
-    align-items: start;
-    justify-content: space-around;
-    flex-direction: row;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    align-items:center;
+    // justify-content: space-between;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
     background: $separation-gray;
