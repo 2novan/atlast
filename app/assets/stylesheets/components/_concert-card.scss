@@ -1,5 +1,6 @@
 .concert-card {
   height: 6rem;
+  margin-bottom: 0.5rem;
   display: flex;
   width: 100%;
   align-items: flex-start;
@@ -15,7 +16,7 @@
   .picto {
     height: 100%;
     background-color: white;
-    width: 6rem;
+    min-width: 6rem;
     display: grid;
     place-content: center;
     font-size: 3rem;
@@ -36,7 +37,9 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    width: -moz-available;
+    width: max-content;
+    min-width: 15rem;
+    max-width: 15rem;
   }
 
   .concert-name h2 {
@@ -70,11 +73,14 @@
     align-items: end;
     justify-content: space-between;
     flex-direction: column;
-
     display: flex;
     height: 100%;
     font-size: 0.8rem;
     color: $text-gray;
+
+    p {
+      width: max-content;
+    }
   }
 
   i {
