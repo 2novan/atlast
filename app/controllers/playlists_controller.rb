@@ -3,6 +3,7 @@ class PlaylistsController < ApplicationController
   def new
     user = RSpotify::User.new('id' => current_user.uid, 'credentials' => { 'token' => current_user.token })
     @releases = current_user.releases
+                            .where('release_date >= ?', 4.week.ago)
                             .includes(:artist, :tracks)
                             .order(release_date: :desc)
   end
