@@ -69,6 +69,19 @@
     border-bottom-right-radius: 0.5rem;
 
   }
+
+  .chev:active {
+    content: "\f077";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    cursor: pointer;
+    background: $blue;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+
+  }
   
   .expanded-album-card {
     // height: 6rem;

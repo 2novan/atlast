@@ -13,12 +13,17 @@ class PlaylistsController < ApplicationController
       "spotify:track:#{spotify_track_id}"
     end
     @playlist.add_tracks!(tracks)
-    if params[:generate_and_open]
-      # raise
-      redirect_to(@playlist.external_urls["spotify"])
-    else
-      # raise
-      redirect_to(newsfeed_path)
-    end
+    redirect_to(playlists_landing_path)
+    # if params[:generate_and_open]
+    #   # raise
+    #   redirect_to(@playlist.external_urls["spotify"])
+    # else
+    #   # raise
+    # end
   end
+
+  def landing
+
+  end
+
 end
