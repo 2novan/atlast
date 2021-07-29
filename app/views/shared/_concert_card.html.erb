@@ -1,16 +1,18 @@
 <div class="concert-card">
+  <div class="picto">
+    <i class="fas fa-ticket-alt"></i>
+  </div>
   <div class="concert-info">
     <div class="concert-text">
       <div class="concert-name">
         <h2><%= concert.name %></h2>
       </div>
-      <div class="concert-city">
-        <p><i class="fas fa-map-marker-alt"></i> <%= concert.location %></p>
+      <div class="concert-date">
+        <p><%= concert.start_at.to_s(:short) %></p>
       </div>
     </div>
-    <div class="concert-date">
-      <p><%= concert.start_at.to_s(:short) %></p>
-      <p><i class="fas fa-users"></i> <%= rand(2000..20000) %> attendes</p>
+    <div class="concert-city">
+      <p><i class="fas fa-map-marker-alt"></i> <%= concert.location %></p>
     </div>
   </div>
 </div>

@@ -6,7 +6,7 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
     @genre = @artist.genres.collect { |g| (g[:name]).to_s }
-    @release = @artist.releases.first
+    @releases = @artist.releases.first(2)
     @concert = @artist.concerts.first
   end
 end

@@ -6,10 +6,9 @@
     <div class="artist-description">
       <div class="artist-name">
         <h1><%= @artist.name.upcase %></h1>
-        <p class="birthdate">Born in <%= rand(1980..2000) %></p>
       </div>
       <div class="genre-desc">
-        <p><%= rand(1000..1100000) %> followers </p>
+        <p><%= @artist.followers.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %> followers </p>
         <p class="genre"><%= @genre.map {|genre| "#{genre} -" }.join("\n").delete_suffix("-") %></p>
       </div>
     </div>
@@ -27,8 +26,10 @@
   </div>
   <div class="artist-next-event">
     <div class="release">
-      <h1>LATEST RELEASE</h1>
-      <%= render 'shared/release_card', release: @release%>
+      <h1>LATEST RELEASES</h1>
+      <% @releases.each do |release| %>
+      <%= render 'shared/release_card', release: release%>
+      <% end %>
     </div>
     <% if @concert %>
       <div class="concert">
