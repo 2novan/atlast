@@ -8,14 +8,13 @@
 }
 
 .add-btn {
-  background: white;
+  background: $black;
   border-radius: 50%;
-  // padding: .75rem;
   width: 36px;
   height: 36px;
   display: grid;
   place-content: center;
-  color: $black;
+  color: white;
 }
 
 .add-btn:before {
@@ -26,9 +25,12 @@
   cursor: pointer;
 }
 
+.checkbox:checked+.add-btn{
+  background: white;
+}
 .checkbox:checked+.add-btn:before{
   content: "\f00c";
-  color: green;
+  color: $black;
 }
 
 .btn-div {
