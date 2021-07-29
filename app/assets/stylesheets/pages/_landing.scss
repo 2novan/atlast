@@ -16,11 +16,15 @@
   .playlist-btn {
     font-size: 1rem;
     color: white;
-    background-color: #1ED760;
+    background-color: #409E8B;
     margin-top: 2rem;
     padding: .7rem;
     border: 1px $black solid;
     border-radius: 1rem;
+    width: 13rem;
+    text-align: center;
+    display: grid;
+    place-content: center;
 
     .playlist-btn:hover {
       background-color: $separation-gray;
