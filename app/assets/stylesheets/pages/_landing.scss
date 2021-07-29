@@ -13,4 +13,19 @@
     
 
   }
+  .playlist-btn {
+    font-size: 1rem;
+    color: white;
+    background-color: #1ED760;
+    margin-top: 2rem;
+    padding: .7rem;
+    border: 1px $black solid;
+    border-radius: 1rem;
+
+    .playlist-btn:hover {
+      background-color: $separation-gray;
+      color: white;
+    }
+  }
+
 }

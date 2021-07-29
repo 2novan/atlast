@@ -5,9 +5,8 @@
       <%= render "shared/playlist_expanded_album_card", release: release, collection: @releases, cached: true %>
       <% end %>
     <% end %>
-</div>
-<div class='btn-div'>
-  <%= submit_tag "Generate playlist", class:"btn-gradient", name: :generate, disable_with: "Loading..." %>
-  <% end %>
+  <div class='btn-div'>
+    <%= submit_tag "Generate playlist", class:"btn-gradient", name: :generate, disable_with: "Loading..." %>
   </div>
+  <% end %>
 </div>
