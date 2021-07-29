@@ -4,7 +4,11 @@
   </strong>
 </div>
 <div class="cards-releases">
-  <% @releases.order(release_date: :desc).each do |release| %>
-    <%= render "shared/release_card", release: release %>
+  <% @news.each do |new| %>
+    <% if new.kind_of?(Release) %>
+      <%= render "shared/release_card", release: new %>
+    <% else %>
+      <%= render "shared/concert_card", concert: new %>
+    <% end %>
   <% end %>
 </div>

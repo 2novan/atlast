@@ -9,6 +9,6 @@ class NewsfeedsController < ApplicationController
 
     @concerts = Concert.all
 
-    @news = (@releases + @concerts).sort_by(&:newsfeed_date)
+    @news = (@releases + @concerts).sort_by(&:newsfeed_date).reverse!
   end
 end
