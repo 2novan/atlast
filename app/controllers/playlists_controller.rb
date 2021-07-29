@@ -1,8 +1,10 @@
 class PlaylistsController < ApplicationController
-  
+
   def new
     user = RSpotify::User.new('id' => current_user.uid, 'credentials' => { 'token' => current_user.token })
-    @releases = current_user.releases.order(release_date: :desc)
+    @releases = current_user.releases
+                            .includes(:artist, :tracks)
+                            .order(release_date: :desc)
   end
 
   def create
