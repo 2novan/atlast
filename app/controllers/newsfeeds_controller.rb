@@ -7,7 +7,7 @@ class NewsfeedsController < ApplicationController
                             .group("releases.id")
                             .order(release_date: :desc)
 
-    @concerts = Concert.all
+    @concerts = Concert.where('start_at <= ?', 2.week.from_now)
 
     @news = (@releases + @concerts).sort_by(&:newsfeed_date).reverse!
   end
