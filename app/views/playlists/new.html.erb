@@ -1,7 +1,9 @@
 <div class="animation-container">
   <%= form_tag playlists_path, method: :post do %>
     <% @releases.each do |release| %>
-      <%= render "shared/playlist_expanded_album_card", release: release %>
+    <% cache release do %>
+      <%= render "shared/playlist_expanded_album_card", release: release, collection: @releases, cached: true %>
+      <% end %>
     <% end %>
 </div>
 <div class='btn-div'>
