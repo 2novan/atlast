@@ -3,7 +3,10 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div class="welcome-container success" data-controller="loader">
-          <div class="loader" data-loader-target="loader"></div>
+          <div class="loader" data-loader-target="loader">
+            <h1> Analyse en cours...</h1>
+            <%= image_tag('loader.svg', class: "the-loader")%>
+          </div>
           <div class="message-box">
             <div id="message">
               <h1><%= @followed_artists.count %></h1>

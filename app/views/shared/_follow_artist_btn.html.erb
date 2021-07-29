@@ -4,16 +4,16 @@
                 id: "follow-artist-#{artist.id}",
                 data: { action: "ajax:success->follow-artist#updateBtn", type: :json },
                 remote: true do %>
-      <i class="fas fa-minus follow-btn remove-icon"></i>
-      <%# <%= image_tag("minus-circle-red.svg", :alt => "minus", class: "remove-icon") %>
+      <%# <i class="fas fa-minus follow-btn remove-icon"></i> %>
+      <%= image_tag("check-circle-fill.svg", :alt => "minus", class: "remove-icon") %>
     <% end %>
   <% else %>
     <%= link_to artist_my_artists_path(artist), method: :post,
                 id: "follow-artist-#{artist.id}",
                 data: { action: "ajax:success->follow-artist#updateBtn", type: :json },
                 remote: true  do %>
-      <i class="fas fa-plus follow-btn add-icon"></i>
-      <%# <%= image_tag("plus.svg", :alt => "plus", class: "add-icon") %>
+      <%# <i class="fas fa-plus follow-btn add-icon"></i> %>
+      <%= image_tag("circle-plus-empty.svg", :alt => "plus", class: "add-icon") %>
     <% end %>
   <% end %>
 </div>

@@ -87,7 +87,31 @@
 
 .success {
   height: 85vh;
+  position: relative;
 }
+
+.loader {
+  background: $black;
+  position: absolute;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  padding-top: 11.9rem;
+  text-align: center;
+
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-family: "Poppins";
+    font-weight: bold;
+  }
+}
+
+.the-loader {
+  height: 220px;
+  width: 220px;
+  margin: 5rem auto;
+}
+
 #message {
   color: white;
   display: flex;
