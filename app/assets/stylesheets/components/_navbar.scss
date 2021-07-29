@@ -34,15 +34,21 @@
     width: 80%;
     border: 0.5rem solid $blue;
     border-right: none;
+    border-radius: none;
     height: 2rem;
-    border-radius: 5px 0 0 5px;
     outline: none;
     color: $blue;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
   }
 
   .input-text {
     color: $blue;
     padding-left: .5rem;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
   }
 
   .searchTerm:focus {
@@ -59,6 +65,8 @@
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 0.8rem;
+    position: absolute;
+    right: -5px;
   }
   /*Resize the wrap to see the search bar change!*/
   .wrap {
