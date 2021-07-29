@@ -16,12 +16,12 @@
         <p><%= release.name  %></p>
       </div>
       <div class="album-text">
+        <div class="tracklist-info">
+          <p><%= release.total_tracks %> <%= release.total_tracks > 1 ? "tracks" : "track" %> -  <%= release.formatted_duration%></p>
+        </div>
         <div class="release-date">
           <% r = release.release_date %>
           <p><%= r.strftime('%d %b %Y')%></p>
-        </div>
-        <div class="tracklist-info">
-          <p><%= release.total_tracks %> <%= release.total_tracks > 1 ? "tracks" : "track" %> -  <%= release.formatted_duration%></p>
         </div>
       </div>
     </div>

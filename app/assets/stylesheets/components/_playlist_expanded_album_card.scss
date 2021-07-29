@@ -1,12 +1,16 @@
 
+.animation-container {
+  padding: 0 .5rem;
+}
+
 .playlist-page-container {
   padding-top: 1rem;
+  position: relative;
+
   .playlist-container {
-    background-color: $gray;
-    // color: $light-gray;
-    border-bottom: 0.2rem solid $blue;
-    border-right: 1rem solid $blue;
+    background-color: $black;
     margin: 0;
+    border-radius: 0.5rem;
     
     .artist {
       display: grid;
@@ -14,6 +18,7 @@
       padding: 1rem;
       padding-top: 1.5rem;
       background: $separation-gray;
+
       h2 {
         color: white;
         font-weight: bold;
@@ -35,13 +40,12 @@
   }
   
   .album-tracks {
-    border-top: 1px solid $light-gray;
     font-size: 0.8rem;
     width: 100%;
-    color: $text-gray;
+    color: white;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    padding: .5rem 1rem .4rem 1rem;
+    padding: 1rem;
 
     li {
       border-bottom: .5px solid $separation-gray;
@@ -53,6 +57,18 @@
     display: none;
     overflow: hidden;
   }
+
+  .chev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    cursor: pointer;
+    background: $blue;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+
+  }
   
   .expanded-album-card {
     // height: 6rem;
@@ -63,12 +79,10 @@
     flex-direction: row;
     // color: $light-gray;
     background-color: $gray;
-    // border-bottom: 0.2rem solid $blue;
-    // border-right: 1rem solid $blue;
-    // margin-bottom: 1rem;
     padding: 1rem;
     height: 8rem;
-    cursor: pointer;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
 
     .album-cover {
       object-fit: cover;
@@ -95,6 +109,7 @@
     flex-grow: 1;
     font-size: 1rem;
     width: -moz-available;
+    width: -webkit-fill-available;
     
   }
   .album-name{
@@ -103,7 +118,16 @@
     flex-direction: row;
     justify-content: space-between;
     width: -moz-available;
-    // font-weight: bolder;
+    width: -webkit-fill-available;
+
+    .name-info {
+      margin-right: .5rem;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
   }
   
   .album-name p {
@@ -126,18 +150,18 @@
   
   
   .separation-line {
-    border-top: 5rem solid white;
+    // border-top: 5rem solid white;
   }
 
   .track-separator {
-    border-top: 1px solid white;
+    border-top: 1px solid $separation-gray;
   }
   
   
   .track {
     display: flex;
     justify-content: space-between;
-    // text-align: left;
+    align-items: center;
 }
 }
 

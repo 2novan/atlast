@@ -1,6 +1,6 @@
 const cardCollapse = () => {
 
-  const coll = document.getElementsByClassName("accordion");
+  const coll = document.getElementsByClassName("chev");
 
   for (let i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
