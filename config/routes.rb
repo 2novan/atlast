@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   end
   get '/search' => 'pages#search', :as => 'search_page'
   resources :playlists, only: [:create, :new]
+  get '/playlists/landing' => 'playlists#landing'
+
 
   unauthenticated :user do
     root to: 'pages#home'
