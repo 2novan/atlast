@@ -1,6 +1,9 @@
-.add-icon,
+.add-icon {
+  height: 2.8rem;
+  margin-right: 1rem;
+}
 .remove-icon {
-  height: 2.6rem;
+  height: 2.5rem;
   margin-right: 1rem;
 }
 
@@ -30,7 +33,6 @@
   .add-icon {
     color: #31AFD4;
   }
-
   .remove-icon{
     color: #FB4B54;
   }
