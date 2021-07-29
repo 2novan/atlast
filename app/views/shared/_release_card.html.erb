@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="release-date">
-      <p><%= release.release_date %></p>
+      <p><%= release.release_date.to_s(:rfc822) %></p>
     </div>
   </div>
 </div>
