@@ -2,8 +2,8 @@
   <% if @artists.blank? %>
     <p>No artist found</p>
   <% else %>
-    <div class="">
-      <p><%= @results_number%> artists found</p>
+    <div class="cards-artist-container">
+      <p class="search-result"><%= @results_number%> artists found</p>
       <% @artists.each do |artist| %>
         <%= render "shared/artist_card", artist: artist %>
       <% end %>
