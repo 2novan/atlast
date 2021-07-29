@@ -13,15 +13,16 @@ module Spotify
         if spotify_artist.images.last&.fetch("url")
           artist.update!(
             name: spotify_artist.name,
-            image_url: spotify_artist.images.last&.fetch("url")
+            image_url: spotify_artist.images.last&.fetch("url"),
+            followers: spotify_artist.followers['total'].to_i
           )
         else
           artist.update!(
             name: spotify_artist.name,
-            image_url: "http://app.atlast.me/assets/logo-af5ba3dba55686bc42a2a02626b935c39a085202364d32aa5d9df922a78f583b.svg"
+            image_url: "http://app.atlast.me/assets/logo-af5ba3dba55686bc42a2a02626b935c39a085202364d32aa5d9df922a78f583b.svg",
+            followers: spotify_artist.followers['total'].to_i
           )
         end
-
         sleep 0.05
 
         spotify_artist.genres.each do |genre|
