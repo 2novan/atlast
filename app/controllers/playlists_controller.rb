@@ -1,8 +1,11 @@
 class PlaylistsController < ApplicationController
-  
+
   def new
     user = RSpotify::User.new('id' => current_user.uid, 'credentials' => { 'token' => current_user.token })
-    @releases = current_user.releases.order(release_date: :desc)
+    @releases = current_user.releases
+                            .where('release_date >= ?', 4.week.ago)
+                            .includes(:artist, :tracks)
+                            .order(release_date: :desc)
   end
 
   def create
@@ -13,10 +16,17 @@ class PlaylistsController < ApplicationController
       "spotify:track:#{spotify_track_id}"
     end
     @playlist.add_tracks!(tracks)
-    if params[:generate_and_open]
-      redirect_to(@playlist.external_urls["spotify"])
-    else
-      redirect_to(newsfeed_path)
-    end
+    redirect_to(playlists_landing_path)
+    # if params[:generate_and_open]
+    #   # raise
+    #   redirect_to(@playlist.external_urls["spotify"])
+    # else
+    #   # raise
+    # end
   end
+
+  def landing
+
+  end
+
 end

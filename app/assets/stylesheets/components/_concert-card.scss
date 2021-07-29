@@ -1,26 +1,35 @@
 .concert-card {
   height: 6rem;
+  margin-bottom: 0.5rem;
   display: flex;
   width: 100%;
   align-items: flex-start;
   flex-direction: row;
   color: $light-gray;
   background-color: $gray;
-  border-bottom: 0.2rem solid $red;
-  border-left: 1rem solid $red;
+  border-right: 0.5rem solid $red;
+  border-radius: 0.5rem;
   .album-cover {
     height: 100%;
   }
 
-  .concert-info {
+  .picto {
     height: 100%;
+    background-color: white;
+    min-width: 6rem;
+    display: grid;
+    place-content: center;
+    font-size: 3rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+  }
+
+  .concert-info {
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
-    flex-grow: 1;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem;
+    height: inherit;
+    flex-direction:column;
   }
 
   .concert-text {
@@ -28,15 +37,21 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    flex-grow: 1;
-    flex-direction: column;
+    width: max-content;
+    min-width: 15rem;
+    max-width: 15rem;
   }
 
   .concert-name h2 {
-    padding-top: 0.3rem;
+    text-transform: uppercase;
     color: $red;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1rem;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .concert-name p {
@@ -47,18 +62,25 @@
   .concert-city {
     font-size: 0.8rem;
     color: $text-gray;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 
   .concert-date {
-    padding-top: 0.7rem;
     align-items: end;
     justify-content: space-between;
     flex-direction: column;
-
     display: flex;
     height: 100%;
     font-size: 0.8rem;
     color: $text-gray;
+
+    p {
+      width: max-content;
+    }
   }
 
   i {

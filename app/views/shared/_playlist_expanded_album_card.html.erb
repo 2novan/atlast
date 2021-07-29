@@ -27,13 +27,17 @@
             <p><%= release.total_tracks %> <%= release.total_tracks > 1 ? "tracks" : "track" %> -  <%= release.formatted_duration%></p>
           </div>
         </div>
+
       </div>
-      <%# <div class="separation-line"></div> %>
     </div>
 
-    <div class=" panel album-tracks">
+    <div class="chev">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <div class="panel album-tracks">
       <ul>
-        <% release.tracks.order(track_number: :asc).each do |track| %>
+        <% release.tracks.sort_by(&:track_number).each do |track| %>
           <li class="track">
             <div class="left-info"><strong><%= track.track_number %></strong> - <%= track.name %> - <%= Time.at(track.duration/1000.0).utc.strftime("%M:%S") %> </div>
               <%= label_tag "track_ids_#{track.spotify_id}" do %>
@@ -41,7 +45,7 @@
                 <i class="fas fa-plus add-btn"></i>
               <% end %>
           </li>
-              <div class="track-separator"></div>
+            <div class="track-separator"></div>
         <% end %>
       </ul>
     </div>

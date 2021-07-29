@@ -14,7 +14,7 @@
     h2 {
       color: white;
       font-weight: bold;
-      font-size: 0.8rem;
+      font-size: 1.2rem;
       text-align: center;
       margin-top: 1rem;
     }
@@ -24,6 +24,7 @@
     object-fit: cover;
     height: 6rem;
     width: 6rem;
+    border-radius: 50%;
   }
 
   .album-tracks {
@@ -54,8 +55,8 @@
     padding: 1rem;
     height: 8rem;
     .album-cover {
-      height: 100%;
-      width: 35%;
+      height: 6rem;
+      width: 6rem;
     }
   }
 
