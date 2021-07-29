@@ -1,8 +1,8 @@
 <div class="landing-container">
   <h1>Playlist generated successfully</h1>
   <%= image_tag('check-circle.svg', class: "validation")%>
-  <% if @playlist %>
-    <%= link_to "Show me on Spotify", @playlist.external_urls["spotify"]  %>
+  <% if params[:playlist_url] %>
+    <%= link_to "Show me on Spotify", params[:playlist_url], class: "playlist-btn "  %>
   <% else %>
     <h2><%= "Mistakes were made." %></h2>
   <% end %>
