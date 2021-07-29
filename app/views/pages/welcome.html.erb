@@ -2,13 +2,16 @@
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <div class="welcome-container success">
-          <div id="message">
-            <h1><%= @followed_artists.count %></h1>
-            <h1> Favorites </h1>
-            <h1> artists added </h1>
+        <div class="welcome-container success" data-controller="loader">
+          <div class="loader" data-loader-target="loader"></div>
+          <div class="message-box">
+            <div id="message">
+              <h1><%= @followed_artists.count %></h1>
+              <h1> Favorites </h1>
+              <h1> artists added </h1>
+            </div>
+            <%= image_tag('check-circle.svg', class: "validation")%>
           </div>
-          <%= image_tag('check-circle.svg', class: "validation")%>
         </div>
       </div>
       <div class="swiper-slide">
@@ -21,7 +24,7 @@
       </div>
       <div class="swiper-slide">
         <div class="welcome-container artist-slide">
-          <h1 class="title-bar"> Add other artists : </h1>
+          <h1 class="title-bar"> Add other artists </h1>
             <div class='cards-artist'>
             <% @recommendations.each do |artist| %>
               <%= render "shared/add_artist_card", artist: artist %><% end %>

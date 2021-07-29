@@ -1,15 +1,16 @@
 .small-artist-card {
-  width: 9rem;
+  width: 9.6rem;
 
   .artist-avatar {
     background-size: cover;
     position: relative;
+    height: 9.6rem;
     width: 100%;
   }
 
   .artist-name {
     padding: 0.5rem;
-    background-color: #0b3247;
+    background-color: #114B6A;
     font-size: 14px;
   }
 }
