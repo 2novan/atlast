@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     # @artistscount = @spotify_user.artists
     @disable_footer = true
     @followed_artists = current_user.followed_artists.includes(:artist)
-    @recommendations = Spotify::FetchRecommendations.new(current_user).call
+    @recommendations = Artist.order("RANDOM()").limit(6).where.not(id: current_user.artists) # Spotify::FetchRecommendations.new(current_user).call
   end
 
   def components
