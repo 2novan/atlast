@@ -57,7 +57,7 @@ $reset-time: 150ms;
 // }
 
 .search-box {
-	border: solid 4px black;
+	border: solid 4px white;
 	display: inline-block;
 	position: relative;
 	border-radius: 50px;
@@ -101,15 +101,15 @@ $reset-time: 150ms;
 			width: 200px;
 			transition: width $search-time cubic-bezier(0.68, -0.22, 0.27, 1.55);
 			+ button[type="reset"] {
-				bottom: 3px;
-				right: -2px;
+				bottom: 8.5px;
+				right: 4px;
 				transition:
 					bottom $reset-time ease-out $search-time
 				, right $reset-time ease-out $search-time;
 			}
       + button[type="reset"]:after {
-				top: 12.8px;
-				right: 3px;
+				top: 8px;
+				right: -1px;
 				opacity: 1;
 				transition:
 					top $reset-time ease-out ($search-time + $reset-time)
@@ -120,8 +120,8 @@ $reset-time: 150ms;
 	}
 	button[type="reset"] {
 		background-color: transparent;
-		width: 25px;
-		height: 25px;
+		width: 14px;
+		height: 14px;
 		border: 0;
 		padding: 0;
 		outline: 0;
@@ -136,7 +136,7 @@ $reset-time: 150ms;
 			content: "";
 			height: 18px;
       width: 18px;
-			border-left: solid 4px black;
+			border-left: solid 4px white;
 			position: absolute;
 			transform: rotate(-45deg);
 		}

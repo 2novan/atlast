@@ -1,20 +1,4 @@
-
-<div class="wrap">
-  <%= form_tag search_page_path, method: :get, class: "search" do %>
-    <%= text_field_tag :search, params[:search], type: "search", placeholder: "Find an artist", novalidate: "novalidate", class: "input-text"%>
-    <%= button_tag class: "searchButton", type: "submit" do %>
-      <i class="fas fa-search"></i>
-    <% end %>
-  <% end %>
-</div>
-
-
 <%= form_tag search_page_path, method: :get, class: "search-box" do %>
-  <%= text_field_tag :search, params[:search], type: "text", placeholder: "Find an artist" %>
-  <%= button_tag type: "reset" %>
+  <%= text_field_tag :search, params[:search], type: "text", placeholder: " " %>
+  <%= button_tag "", type: :reset, onclick: "this.previousElementSibling.removeAttribute('value')" %>
 <% end %>
-
-<%# <form class="search-box">
-  <input type="text" placeholder=" "/>
-  <button type="reset"></button>
-</form> %>
