@@ -28,6 +28,7 @@
     width: 100%;
     position: relative;
     display: flex;
+    border-radius: 50%;
   }
 
   .searchTerm {
@@ -49,6 +50,7 @@
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
+    border-radius: 1rem 1rem 1rem 1rem;
   }
 
   .searchTerm:focus {
@@ -56,13 +58,13 @@
   }
 
   .searchButton {
-    width: 20px;
+    width: 25px;
     height: 1.5rem;
     border: 1px solid $blue;
     background: $blue;
     text-align: center;
     color: #fff;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 50% 50% 0;
     cursor: pointer;
     font-size: 0.8rem;
     position: absolute;
