@@ -20,14 +20,14 @@ class User < ApplicationRecord
     if user
       sign_up = false
       user.update(user_params)
+      Spotify::FetchUserTopArtistsJob.perform_later(user)
     else
       sign_up = true
       user = User.new(user_params)
       user.password = Devise.friendly_token[0, 20]  # Fake password for validation
       user.save
+      Spotify::FetchUserTopArtists.new(user).call
     end
-
-    Spotify::FetchUserTopArtists.new(user).call
 
     return [user, sign_up]
   end

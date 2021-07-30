@@ -12,7 +12,6 @@ class PagesController < ApplicationController
   def welcome
     # @artistscount = @spotify_user.artists
     @disable_footer = true
-    @artists = Artist.all
     @followed_artists = current_user.followed_artists.includes(:artist)
     @recommendations = Spotify::FetchRecommendations.new(current_user).call
   end
