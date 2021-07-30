@@ -35,7 +35,7 @@ Lint/MissingSuper:
 Style/FrozenStringLiteralComment:
   Enabled: false
 Layout/LineLength:
-  Max: 120
+  Max: 999999999999999
 Style/EmptyMethod:
   Enabled: false
 Bundler/OrderedGems:
