@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = [ "box" ]
 
   connect() {
-    console.log(this.boxTargets);
+    // console.log(this.boxTargets);
   }
 
   toggle() {
