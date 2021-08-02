@@ -1,0 +1,16 @@
+<div class="profile-container">
+  <div class="top-profile">
+    <h1><%= @user.nickname %></h1>
+    <%= image_tag(@user.avatar_url, :alt => @user.nickname) %>
+    <div class="separation-line"></div>
+  </div>
+
+    <div class="logout-btn"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></div>
+
+    <div class="user-artists">
+      <% @user.artists.each do |followed_artist| %>
+        <%= render "shared/welcome_artist_card", artist: followed_artist %>
+      <% end %>
+    </div>
+</div>
+

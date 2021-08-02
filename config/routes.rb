@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     root to: redirect("/newsfeed"), as: :authenticated_root
   end
 
+get '/profile' => 'users#show', as: :profile
   get '/components' => 'pages#components'
   get '/welcome' => 'pages#welcome', as: :welcome
 
